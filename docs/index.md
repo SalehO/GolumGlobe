@@ -1,9 +1,9 @@
-#Golem GLobe
+# Golem GLobe
 
 Source code: https://github.com/soberanc/GolemGlobe
 
-###Resports:
+### Resports:
 
-- [Proposal](proposal.html)
-- [Status](status.html)
-- [Final](final.html)
+ - [Proposal](proposal.html)
+ - [Status](status.html)
+ - [Final](final.html)
