@@ -1,9 +1,4 @@
----
-layout: default
-title:  Team
----
-
-# GolemGlobe
+# Our Team:
 
 
 ## USER 1
