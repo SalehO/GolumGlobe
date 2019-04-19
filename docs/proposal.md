@@ -3,13 +3,15 @@ layout: default
 title: Proposal
 ---
 
-### Summary of the Project 
+#### Summary of the Project 
+Our project is inspired by Wumpus World. 
+
+The AI will be required to navigate platform 
 
 
-
-### AI/ML Algorithms 
+#### AI/ML Algorithms 
 Reinforcement Learning and Dijkstra's Shortest Path Algorithm 
 
-### Evaluation Plan 
+#### Evaluation Plan 
 
-## Appointment with the Instructor 
+#### Appointment with the Instructor 
