@@ -6,7 +6,9 @@ title: Proposal
 #### Summary of the Project 
 Our project is inspired by Wumpus World. 
 
-The AI will be required to navigate through a platform while they are under the effects of the blindness potion. They must locate the gold that is placed randomly on the platform while avoiding the golem. If the golem is in the way of the gold and there is no other way except to kill the monster, the AI must kill the golem, retrieve the gold, and return to their starting point (where they initially spawn).  
+The AI will be required to navigate through a platform while they are under the effects of the blindness potion. They must locate the gold that is placed randomly on the platform while avoiding the golem. If the golem is in the way of the gold and there is no other way except to kill the monster, the AI must kill the golem, retrieve the gold, and return to their starting point (where they initially spawn). 
+
+Our input will be information about the map and the agent's surroundings. The program will indicate whenever the agent smells a wumpus, feels breeze, encounters a golem, or discovers the gold. Our output will be the actions of the agent. 
 
 
 #### AI/ML Algorithms 
