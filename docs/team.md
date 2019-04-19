@@ -3,7 +3,7 @@ layout: default
 title:  Team
 ---
 
-# {{ page.title }}
+# GolemGlobe
 
 
 ## USER 1
