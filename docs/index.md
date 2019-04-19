@@ -1,3 +1,8 @@
+---
+layout: default
+title: Proposal
+---
+
 # Golem Globe
 
 ![](https://www.ics.uci.edu/~wschallo/golemGlobe.png)
