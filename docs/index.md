@@ -1,9 +1,9 @@
 ---
 layout: default
-title:  Home
+title:  Golem Globe
 ---
 
-Source code: https://github.com/USER/PROJECT (_fix this_)
+Source code: https://github.com/soberanc/GolemGlobe
 
 Reports:
 
