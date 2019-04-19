@@ -5,7 +5,7 @@
 ***UCI Net ID***: Saleho
 
 ## USER 2
-***UCI Net ID***: Sobernc
+***UCI Net ID***: Soberanc
 
 ## USER 3
 ***UCI Net ID***: Wschallo
