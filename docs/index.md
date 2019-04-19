@@ -4,6 +4,6 @@ Source code: https://github.com/soberanc/GolemGlobe
 
 ### Resports:
 
- - [Proposal](proposal.html)
- - [Status](status.html)
- - [Final](final.html)
+ - [Proposal](https://github.com/soberanc/GolemGlobe/blob/master/docs/proposal.md)
+ - [Status]()
+ - [Final]()
