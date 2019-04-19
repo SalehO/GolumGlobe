@@ -1,2 +1,2 @@
-# CS175Project
+# GolemGlobe
 MinecraftAI
