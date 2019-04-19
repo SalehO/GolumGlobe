@@ -1,4 +1,4 @@
-# Golem GLobe
+# Golem Globe
 
 Source code: https://github.com/soberanc/GolemGlobe
 
