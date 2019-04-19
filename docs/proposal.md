@@ -3,10 +3,10 @@ layout: default
 title: Proposal
 ---
 
-## Summary:
+## Summary of the Project 
 
-## AI/ML Algorithms:
+## AI/ML Algorithms 
 
-## Evaluation Plan:
+## Evaluation Plan 
 
-## Appoitment
+## Appointment with the Instructor 
