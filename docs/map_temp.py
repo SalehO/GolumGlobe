@@ -179,7 +179,7 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 
                       <DrawBlock x="3" y="7" z="4" type="air"/>
                       <DrawBlock x="3" y="6" z="4" type="diamond_block"/>
-                      <DrawEntity x="3.5"  y="9" z="4.5" type="Creep" />
+                      <DrawEntity x="3.5"  y="9" z="4.5" type="Creeper" />
                       
                       <DrawBlock x="1" y="6" z="9" type="air"/>
 
