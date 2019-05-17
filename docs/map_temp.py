@@ -263,7 +263,7 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="0" y="8" z="7" type="diamond_block"/>
                       <DrawBlock x="1" y="8" z="7" type="diamond_block"/>
                       <DrawBlock x="2" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="7" type="diamond_block"/>
+                      <DrawBlock x="3" y="8" z="7" type="air"/>
                       <DrawBlock x="4" y="8" z="7" type="diamond_block"/>
                       <DrawBlock x="5" y="8" z="7" type="diamond_block"/>
                       <DrawBlock x="6" y="8" z="7" type="diamond_block"/>
@@ -276,6 +276,7 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="2" y="8" z="8" type="diamond_block"/>
                       <DrawBlock x="3" y="8" z="8" type="diamond_block"/>
                       <DrawBlock x="4" y="8" z="8" type="gold_block"/>
+                      <DrawItem x="4" y="9" z="8" type="gold_nugget"/>
 
                       <DrawBlock x="5" y="8" z="8" type="diamond_block"/>
                       <DrawBlock x="6" y="8" z="8" type="diamond_block"/>
