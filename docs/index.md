@@ -14,5 +14,3 @@ Source code: https://github.com/soberanc/GolemGlobe
  - [Proposal](https://github.com/soberanc/GolemGlobe/blob/master/docs/proposal.md)
  - [Status Report](https://github.com/soberancGolemGlobe/blob/master/docs/statusReport.md)
  - [Final (coming soon)]()
- 
- ### 
