@@ -24,6 +24,8 @@ class Board:
         self.currentCol = -1
         self.currentIndex = -1
 
+        self.initalIndex = -1
+
         if loadMap != "":
             self.loadMapFromFile(loadMap)
             print(self)
@@ -150,12 +152,16 @@ class Board:
                     self.currentRow = index//self.rows
                     self.currentCol = index%self.rows
                     self.currentIndex = index
+                    self.initalIndex = index
                     return
             print("error: No exit found.")
             return
         else:
             print("error: can't initalize starting postition, map itself is not initalized.")
 
+
+    def reset(self):
+        self.currentIndex = self.initalIndex 
     def tileAtIndex(self,index=-1):
         if index == -1:
             return self.board[self.currentIndex]
