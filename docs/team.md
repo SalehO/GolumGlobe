@@ -6,11 +6,11 @@ title: Our Team
 # Our Team:
 
 
-## USER 1
+## Omar Saleh
 ***UCI Net ID***: Saleho
 
-## USER 2
+## Christine Soberano 
 ***UCI Net ID***: Soberanc
 
-## USER 3
+## William Schallock 
 ***UCI Net ID***: Wschallo
