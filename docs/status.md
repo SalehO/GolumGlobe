@@ -27,11 +27,13 @@ Our moonshot case is to create an agent that stops dying and is always able to r
 ### Goals
 - Right now, our main remaining goal is to make our agent's traversal algorithm to be more general and able to adapt to new maps. Right now, our agent uses a Q-table to travese a map, which means that the learning is specific to a given map. We plan to generalize our agent by using the information stored in the q-table and feeding it into a neural network, that will predict the anticipated reward of a given tile, by looking at the obserations made from all its adjacent tiles.
 - Place the gold within a pit with a monster requiring the AI to first realize that the gold is in the pit then to kill the monster before going into the pit, retrieve the gold, and then exit the map. 
+- Include a reward for killing the monsters. Monsters wouldn't necessarily be on top of the gold, but could also be blocking the path to the gold. 
 
 ### Challenges 
 - Our current algorithm tends to repeatedly visit certain blocks. A solution to this issue could be creating temporary rewards that will help prevent them from going back and forth. 
 - There are random pauses during traversals which need to be fixed. 
 - Find a monster that is big enough to be seen above the pit without being able to jump or step out of the pit. 
+- What is the best way to kill monsters? Is there a kill command? 
 
 ## Resources Used  
 Below is a list of resources we found helpful throughout the development of our project
