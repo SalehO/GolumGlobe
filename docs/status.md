@@ -4,7 +4,7 @@ title: Status
 ---
 ## Project Summary
 Our project is called Golem Globe, which is an implementation of Wumpus World in Minecraft. 
-The goal of our project is to create a Minecraft AI agent that can navigate through a maze containing pits and monsters to find the treasure.
+The goal of our project is to create a Minecraft AI agent that can navigate through a maze containing pits and monsters to find the treasure then go back to the start position.
 
 ## Approach
 We begin by trainning our agent on a static map. The agent learns through the use of a tabular q-table which rewards the agent for successful traversals and penalizes the agent for failing to traverse the map. During a traversal, the agent stores in memory all previous observations it made and associates them with a respective reward. When the agent is done traversing (either by finding the gold, or dying) it maps all the previous actions it made to the total rewards received. We created our agent to prioritize the long-term reward, and added some randomness so that it would encounter more scenarios. 
