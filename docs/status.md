@@ -34,6 +34,6 @@ Our moonshot case is to create an agent that stops dying and is always able to r
 - Find a monster that is big enough to be seen above the pit without being able to jump or step out of the pit. 
 
 ## Resources Used  
-Below, are a list of resoruces we used.
+Below is a list of resources we found helpful throughout the development of our project
  - [For monster and item types that can be placed on the map upon start of the mission](https://github.com/microsoft/malmo/blob/master/Schemas/Types.xsd.in)
  - [Tabular Q Learning](https://github.com/Microsoft/malmo/blob/master/Malmo/samples/Python_examples/tabular_q_learning.py)
