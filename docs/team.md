@@ -3,13 +3,13 @@ layout: default
 title: Our Team
 ---
 
-# Our Team:
+## Our Team:
 
-## Omar Saleh
-  ***UCI Net ID***: Saleho
+### Omar Saleh
+  ***UCI Net ID***: saleho
 
-## Christine Soberano 
-  ***UCI Net ID***: Soberanc
+### Christine Soberano 
+  ***UCI Net ID***: soberanc
 
-## William Schallock 
-  ***UCI Net ID***: Wschallo
+### William Schallock 
+  ***UCI Net ID***: wschallo
