@@ -30,9 +30,9 @@ Our moonshot case is to create an agent that stops dying and is always able to r
 - Include a reward for killing the monsters. Monsters wouldn't necessarily be on top of the gold, but could also be blocking the path to the gold. 
 
 ### Challenges 
-- Our current algorithm tends to repeatedly visit certain blocks. A solution to this issue could be creating temporary rewards that will help prevent them from going back and forth. 
+- Our current algorithm tends to repeatedly visit certain blocks. A solution to this issue could be creating temporary rewards that will help prevent them from going back and forth to the same blocks. 
 - There are random pauses during traversals which need to be fixed. 
-- Find a monster that is big enough to be seen above the pit without being able to jump or step out of the pit. 
+- Find a monster that is big enough to be seen above the pit without being able to jump or step out of the pit or figure out a way to keep the monster from running around other than having it stuck in a hole. 
 - What is the best way to kill monsters? Is there a kill command? 
 
 ## Resources Used  
