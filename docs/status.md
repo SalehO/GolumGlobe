@@ -30,7 +30,7 @@ As an example here are our results both for training and validation:
 As you can see here the agent continuously failed to complete his missions. 
 
 | Test#   | Result  | Reward  | Steps |
-| :----:  | :----:  | :----:  | :---: |
+|:-------:|:-------:|:-------:|:-----:|
 | Test 1  | Fail    | -1016   | 16    |
 | Test 2  | Fail    | -1054   | 54    |
 | Test 3  | Fail    | -1115   | 115   |
@@ -42,7 +42,7 @@ As you can see here the agent continuously failed to complete his missions.
 These results show that after a large number of training sessions the agent is not only able to complete its missions but is also able to find the shortest paths to the gold.
 
 | Test#   | Result  | Reward | Steps |
-| :---:   | :---:   | :---:  | :---: |
+|:-------:|:-------:|:------:|:-----:|
 | Test 1  | Success | 989    | 11    |
 | Test 2  | Success | 987    | 13    |
 | Test 3  | Success | 985    | 15    |
