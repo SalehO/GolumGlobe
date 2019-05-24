@@ -2,6 +2,10 @@
 layout: default
 title: Status
 ---
+
+## Our Status Report Video:
+<iframe width="560" height="315" src="https:https://youtu.be/-EcSR30vwDM" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+
 ## Project Summary
 Our project is called Golem Globe, which is a modified implementation of Wumpus World in Minecraft. 
 The goal of our project is to create a Minecraft AI agent that can navigate through a maze containing pits and monsters to find the treasure/gold then go back to the start position.
