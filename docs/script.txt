@@ -25,6 +25,7 @@ Omar: <Matthew>
 <voice name="Salli"> That sounds like a good idea. Let’s watch a clip of our agent training.
 
 #reflect on training performance/ introduce timelapse
+
 <voice name="Joey"> That definitely made a difference! 
 
 <voice name="Matthew"> Yes! Now our agent is able to complete some of his missions! Let’s see how well he does out of training. 
@@ -46,7 +47,7 @@ Omar: <Matthew>
 
 
 
-#                                               Ignore
+#                                                               Ignore
 <speak>
     
     <voice name="Ivy"> eye am not a real human.</voice>.
@@ -59,6 +60,7 @@ Omar: <Matthew>
     <voice name="Salli"> eye am not a real human.</voice>.
     
 </speak>
+
 
 
 <voice name="Matthew">Omar: Hi everyone, welcome to our CS175 Project Status report. My name is Omar.</voice>.
