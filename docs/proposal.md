@@ -24,4 +24,4 @@ We will be using Reinforcement Learning and Dijkstra's Shortest Path Algorithm.
 
 #### Appointment with the Instructor 
 Wednesday, April 24, 2019 
-DBH 4204 
+DBH 4204
