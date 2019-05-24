@@ -36,7 +36,7 @@ Omar: <Matthew>
 
 
 #talk about improvement/ future changes
-<voice name="Joey"> In the future we are hoping to not only train the agent to be able to traverse a variety of maps but to also kill the golem in cases where the gold is within the pit or if the golem is blocking our only path to the gold. </voice>
+<voice name="Joey"> In the future we are hoping to not only train the agent to be able to traverse a variety of maps but to also kill the golem in cases where the gold is under the golum or if the golem is blocking our only path to the gold. </voice>
 
 <voice name="Matthew"> We are also hoping to find a monster that better represents a golem, a monster that is big enough so that we are able to see it above the pit without it being able to escape from the pit. </voice>
 
