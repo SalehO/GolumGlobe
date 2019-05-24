@@ -12,5 +12,5 @@ Source code: https://github.com/soberanc/GolemGlobe
 ### Resports:
 
  - [Proposal](https://github.com/soberanc/GolemGlobe/blob/master/docs/proposal.md)
- - [Status Report](https://github.com/soberanc/GolemGlobe/status.html)
+ - [Status Report](https://soberanc.github.io/GolemGlobe/status.html)
  - [Final (coming soon)]()
