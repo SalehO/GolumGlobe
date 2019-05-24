@@ -36,6 +36,7 @@ As you can see here the agent continuously failed to complete his missions.
 | Test 3  | Fail    | -1115   | 115   |
 | Test 4  | Fail    | -1010   | 10    |
 | Test 5  | Fail    | -1036   | 36    |
+---------------------------------------
 | Average | 0%      | -1046.2 | 46.2  |
 
 #### Post-Training Quantitative Results 
@@ -48,6 +49,7 @@ These results show that after a large number of training sessions the agent is n
 | Test 3  | Success | 985    | 15    |
 | Test 4  | Success | 981    | 19    |
 | Test 5  | Success | 981    | 19    |
+-------------------------------------- 
 | Average | 100%    | 984.6  | 15.4  | 
 
 
