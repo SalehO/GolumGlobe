@@ -2,48 +2,48 @@ Christine: <Salli>
 William: <Joey>
 Omar: <Matthew> 
 
-<voice name="Matthew"> Hi everyone, welcome to our CS175 Project Status report. My name is Omar.
-<voice name="Joey"> I’m William 
-<voice name="Salli"> and I’m Christine 
+<voice name="Matthew"> Hi everyone, welcome to our CS175 Project Status report. My name is Omar.</voice>
+<voice name="Joey"> I’m William </voice>
+<voice name="Salli"> and I’m Christine </voice>
 
 #cover rules of golem globe
-<voice name="Matthew"> For our project we chose to create a minecraft version of Wumpus World. Welcome to Golem Globe! 
+<voice name="Matthew"> For our project we chose to create a minecraft version of Wumpus World. Welcome to Golem Globe! </voice>
 
-<voice name="Salli"> Golem globe’s platform environment consists of pits, monsters, and a single gold pile.
+<voice name="Salli"> Golem globe’s platform environment consists of pits, monsters, and a single gold pile.</voice>
 
-<voice name="Joey"> We created an agent whose objective is to navigate the map and find the treasure. If the agent is able to find the treasure without dying first, we call that a successful traversal.
+<voice name="Joey"> We created an agent whose objective is to navigate the map and find the treasure. If the agent is able to find the treasure without dying first, we call that a successful traversal.</voice>
 
-<voice name="Matthew"> To traverse the map the agent will have to remember different types of observations to be successful. If they smell a golem, the agent must realize that they are next to a golem. If they feel a breeze they must realize that they are beside a pit. These observations must be used to successfully complete their mission. If the agent sees glitter it is a sign that they have found the gold, must retrieve it, and exit from the map without dying. In our current version of Golem globe, if our agent falls into the pit they will die and the mission will have been a failure. 
+<voice name="Matthew"> To traverse the map the agent will have to remember different types of observations to be successful. If they smell a golem, the agent must realize that they are next to a golem. If they feel a breeze they must realize that they are beside a pit. These observations must be used to successfully complete their mission. If the agent sees glitter it is a sign that they have found the gold, must retrieve it, and exit from the map without dying. In our current version of Golem globe, if our agent falls into the pit they will die and the mission will have been a failure. </voice>
 
-<voice name="Salli"> Please note that in this following demonstration, we are using a gold block to represent the treasure and a creeper to represent the golem.
+<voice name="Salli"> Please note that in this following demonstration, we are using a gold block to represent the treasure and a creeper to represent the golem.</voice>
 
 #introduce training video
-<voice name="Joey"> Huh, well that was hard to watch.
+<voice name="Joey"> Huh, well that was hard to watch.</voice>
 
-<voice name="Matthew"> Maybe we should train our agent for longer.
+<voice name="Matthew"> Maybe we should train our agent for longer.</voice>
 
-<voice name="Salli"> That sounds like a good idea. Let’s watch a clip of our agent training.
+<voice name="Salli"> That sounds like a good idea. Let’s watch a clip of our agent training.</voice>
 
 #reflect on training performance/ introduce timelapse
 
-<voice name="Joey"> That definitely made a difference! 
+<voice name="Joey"> That definitely made a difference! </voice>
 
-<voice name="Matthew"> Yes! Now our agent is able to complete some of his missions! Let’s see how well he does out of training. 
+<voice name="Matthew"> Yes! Now our agent is able to complete some of his missions! Let’s see how well he does out of training. </voice>
 
 #show final
 
-<voice name="Salli"> Wow! Now he’s completely most if not all of his missions successfully! 
+<voice name="Salli"> Wow! Now he’s completely most if not all of his missions successfully! </voice>
 
 
 #talk about improvement/ future changes
-<voice name="Joey"> In the future we are hoping to not only train the agent to be able to traverse a variety of maps but to also kill the golem in cases where the gold is within the pit or if the golem is blocking our only path to the gold. 
+<voice name="Joey"> In the future we are hoping to not only train the agent to be able to traverse a variety of maps but to also kill the golem in cases where the gold is within the pit or if the golem is blocking our only path to the gold. </voice>
 
-<voice name="Matthew"> We are also hoping to find a monster that better represents a golem, a monster that is big enough so that we are able to see it above the pit without it being able to escape from the pit. 
+<voice name="Matthew"> We are also hoping to find a monster that better represents a golem, a monster that is big enough so that we are able to see it above the pit without it being able to escape from the pit. </voice>
 
-<voice name="Matthew"> We will also implement an algorithm for the agent to find the shortest path back to the starting point after finding the gold
+<voice name="Matthew"> We will also implement an algorithm for the agent to find the shortest path back to the starting point after finding the gold</voice>
 
 #Conclusion 
-<voice name="Salli"> Thank you all for watching! 
+<voice name="Salli"> Thank you all for watching! </voice>
 
 
 
