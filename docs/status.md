@@ -3,8 +3,8 @@ layout: default
 title: Status
 ---
 ## Project Summary
-Our project is called Golem Globe, which is an implementation of Wumpus World in Minecraft. 
-The goal of our project is to create a Minecraft AI agent that can navigate through a maze containing pits and monsters to find the treasure then go back to the start position.
+Our project is called Golem Globe, which is a modified implementation of Wumpus World in Minecraft. 
+The goal of our project is to create a Minecraft AI agent that can navigate through a maze containing pits and monsters to find the treasure/gold then go back to the start position.
 
 ## Approach
 We begin by trainning our agent on a static map. The agent learns through the use of a tabular q-table which rewards the agent for successful traversals and penalizes the agent for failing to traverse the map. During a traversal, the agent stores in memory all previous observations it made and associates them with a respective reward. When the agent is done traversing (either by finding the gold, or dying) it maps all the previous actions it made to the total rewards received. We created our agent to prioritize the long-term reward, and added some randomness so that it would encounter more scenarios. 
@@ -27,7 +27,8 @@ Our moonshot case is to create an agent that stops dying and is always able to r
 ### Goals
 - Right now, our main remaining goal is to make our agent's traversal algorithm to be more general and able to adapt to new maps. Right now, our agent uses a Q-table to travese a map, which means that the learning is specific to a given map. We plan to generalize our agent by using the information stored in the q-table and feeding it into a neural network, that will predict the anticipated reward of a given tile, by looking at the obserations made from all its adjacent tiles.
 - Place the gold within a pit with a monster requiring the AI to first realize that the gold is in the pit then to kill the monster before going into the pit, retrieve the gold, and then exit the map. 
-- Include a reward for killing the monsters. Monsters wouldn't necessarily be on top of the gold, but could also be blocking the path to the gold. 
+- Include a reward for killing the monsters. Monsters wouldn't necessarily be on top of the gold, but could also be blocking the path to the gold.
+- We might also have the monster move around the map
 
 ### Challenges 
 - Our current algorithm tends to repeatedly visit certain blocks. A solution to this issue could be creating temporary rewards that will help prevent them from going back and forth to the same blocks. 
