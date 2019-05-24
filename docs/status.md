@@ -31,12 +31,12 @@ As you can see here the agent continuously failed to complete his missions.
 
 | Test#   | Result  | Reward  | Steps |
 |:-------:|:-------:|:-------:|:-----:|
-| Test 1  | Fail    | -1016   | 16    |
-| Test 2  | Fail    | -1054   | 54    |
-| Test 3  | Fail    | -1115   | 115   |
-| Test 4  | Fail    | -1010   | 10    |
-| Test 5  | Fail    | -1036   | 36    |
-| Average | 0%      | -1046.2 | 46.2  |
+|\| Test 1  \||\| Fail    \|| -1016   \|| 16    \||
+|\| Test 2  \||\| Fail    \|| -1054   \|| 54    \||
+|\| Test 3  \||\| Fail    \|| -1115   \|| 115   \||
+|\| Test 4  \||\| Fail    \|| -1010   \|| 10    \||
+|\| Test 5  \||\| Fail    \|| -1036   \|| 36    \||
+|\| Average \||\| 0%      \|| -1046.2 \|| 46.2  \||
 
 #### Post-Training Quantitative Results 
 These results show that after a large number of training sessions the agent is not only able to complete its missions but is also able to find the shortest paths to the gold.
