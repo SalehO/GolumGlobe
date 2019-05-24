@@ -61,7 +61,6 @@ Omar: <Matthew>
 </speak>
 
 
-
 <voice name="Matthew">Omar: Hi everyone, welcome to our CS175 Project Status report. My name is Omar.</voice>.
 <voice name="Joey">William: I’m William </voice>.
 <voice name="Salli">: and I’m Christine</voice>.
