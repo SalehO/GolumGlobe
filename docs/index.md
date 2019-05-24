@@ -4,7 +4,7 @@ title: Golem Globe
 ---
 
 ## Our Status Report Video:
-<iframe width="560" height="315" src="https:https://youtu.be/-EcSR30vwDM" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+[![Status Report Video](https://img.youtube.com/vi/-EcSR30vwDM/0.jpg)](https://www.youtube.com/watch?v=-EcSR30vwDM)
 
 # Golem Globe
 
