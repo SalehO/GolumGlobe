@@ -17,6 +17,17 @@ To evaluate the performance of our agent we are using a combination of qualitive
 ### Quantitative:
 The primary quantitative metrics we will use is the cummulative reward received and the sucess rate. The cummulative reward is calculated by simply summing up the agents rewards from all action it took, while the success rate is the ratio of succeesful traversal to total attempts made. If our agent recieves on average a higher cummulative reward, and achieve a greater success rate we consider that a successful implementation.
 
+As an example here are our results both for training and validation: 
+
+##### Pre-Training Quantitative Results 
+![](https://drive.google.com/open?id=1W6HRU4QMD0Hbs6IqZNZsVyUPFMaDLEX5)
+As you can see here the agent continuously failed to complete his missions. 
+
+##### Post-Training Quantitative Results 
+![](https://drive.google.com/open?id=1jHN1jHAr9PZk_gfGSg_9h1kyhk-1Nljk)
+These results show that after a large number of training sessions the agent is not only able to complete its missions but is also able to find the shortest paths to the gold. 
+
+
 ### Qualitative:
 To verify that the project works we will begin the AI on a controlled map that will not change (traning data). If the AI succeeds they will move on to randomized maps for testing and learning. Qualitatively, we will consider the difficulty of hte maps our agent can successfuly traverse, and how easily it can adapt to new maps. 
 
