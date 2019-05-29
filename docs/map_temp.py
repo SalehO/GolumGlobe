@@ -177,10 +177,10 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 
 
 
-                      <DrawBlock x="3" y="7" z="4" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="4" type="diamond_block"/>
+                      <DrawBlock x="3" y="7" z="4" type="lapis_block"/>
+                      <DrawBlock x="3" y="8" z="4" type="lapis_block"/>
 
-                      <DrawBlock x="3" y="6" z="4" type="diamond_block"/>
+                      <DrawBlock x="3" y="6" z="4" type="lapis_block"/>
                       <DrawEntity x="3.5"  y="9" z="4.5" type="Zombie" />
                       
                       <DrawBlock x="1" y="6" z="9" type="air"/>
@@ -196,116 +196,116 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 
 
                       <DrawBlock x="0" y="8" z="1" type="emerald_block"/>
-                      <DrawBlock x="1" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="1" type="diamond_block"/>
+                      <DrawBlock x="1" y="8" z="1" type="lapis_block"/>
+                      <DrawBlock x="2" y="8" z="1" type="lapis_block"/>
+                      <DrawBlock x="3" y="8" z="1" type="lapis_block"/>
+                      <DrawBlock x="4" y="8" z="1" type="lapis_block"/>
+                      <DrawBlock x="5" y="8" z="1" type="lapis_block"/>
+                      <DrawBlock x="6" y="8" z="1" type="lapis_block"/>
+                      <DrawBlock x="7" y="8" z="1" type="lapis_block"/>
+                      <DrawBlock x="8" y="8" z="1" type="lapis_block"/>
+                      <DrawBlock x="9" y="8" z="1" type="lapis_block"/>
 
-                      <DrawBlock x="0" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="2" type="diamond_block"/> 
+                      <DrawBlock x="0" y="8" z="2" type="lapis_block"/>
+                      <DrawBlock x="1" y="8" z="2" type="lapis_block"/>
+                      <DrawBlock x="2" y="8" z="2" type="lapis_block"/>
+                      <DrawBlock x="3" y="8" z="2" type="lapis_block"/>
+                      <DrawBlock x="4" y="8" z="2" type="lapis_block"/>
+                      <DrawBlock x="5" y="8" z="2" type="lapis_block"/>
+                      <DrawBlock x="6" y="8" z="2" type="lapis_block"/>
+                      <DrawBlock x="7" y="8" z="2" type="lapis_block"/>
+                      <DrawBlock x="8" y="8" z="2" type="lapis_block"/>
+                      <DrawBlock x="9" y="8" z="2" type="lapis_block"/> 
 
-                      <DrawBlock x="0" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="3" type="diamond_block"/>
+                      <DrawBlock x="0" y="8" z="3" type="lapis_block"/>
+                      <DrawBlock x="1" y="8" z="3" type="lapis_block"/>
+                      <DrawBlock x="2" y="8" z="3" type="lapis_block"/>
+                      <DrawBlock x="3" y="8" z="3" type="lapis_block"/>
+                      <DrawBlock x="4" y="8" z="3" type="lapis_block"/>
+                      <DrawBlock x="5" y="8" z="3" type="lapis_block"/>
+                      <DrawBlock x="6" y="8" z="3" type="lapis_block"/>
+                      <DrawBlock x="7" y="8" z="3" type="lapis_block"/>
+                      <DrawBlock x="8" y="8" z="3" type="lapis_block"/>
+                      <DrawBlock x="9" y="8" z="3" type="lapis_block"/>
 
-                      <DrawBlock x="0" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="4" type="diamond_block"/>
+                      <DrawBlock x="0" y="8" z="4" type="lapis_block"/>
+                      <DrawBlock x="1" y="8" z="4" type="lapis_block"/>
+                      <DrawBlock x="2" y="8" z="4" type="lapis_block"/>
+                      <DrawBlock x="4" y="8" z="4" type="lapis_block"/>
+                      <DrawBlock x="5" y="8" z="4" type="lapis_block"/>
+                      <DrawBlock x="6" y="8" z="4" type="lapis_block"/>
                       <DrawBlock x="7" y="8" z="4" type="air"/>
-                      <DrawBlock x="8" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="4" type="diamond_block"/>
+                      <DrawBlock x="8" y="8" z="4" type="lapis_block"/>
+                      <DrawBlock x="9" y="8" z="4" type="lapis_block"/>
 
-                      <DrawBlock x="0" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="5" type="diamond_block"/>
+                      <DrawBlock x="0" y="8" z="5" type="lapis_block"/>
+                      <DrawBlock x="1" y="8" z="5" type="lapis_block"/>
+                      <DrawBlock x="2" y="8" z="5" type="lapis_block"/>
+                      <DrawBlock x="3" y="8" z="5" type="lapis_block"/>
+                      <DrawBlock x="4" y="8" z="5" type="lapis_block"/>
+                      <DrawBlock x="5" y="8" z="5" type="lapis_block"/>
+                      <DrawBlock x="6" y="8" z="5" type="lapis_block"/>
+                      <DrawBlock x="7" y="8" z="5" type="lapis_block"/>
+                      <DrawBlock x="8" y="8" z="5" type="lapis_block"/>
+                      <DrawBlock x="9" y="8" z="5" type="lapis_block"/>
 
 
-                      <DrawBlock x="0" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="6" type="diamond_block"/>
+                      <DrawBlock x="0" y="8" z="6" type="lapis_block"/>
+                      <DrawBlock x="1" y="8" z="6" type="lapis_block"/>
+                      <DrawBlock x="2" y="8" z="6" type="lapis_block"/>
+                      <DrawBlock x="3" y="8" z="6" type="lapis_block"/>
+                      <DrawBlock x="4" y="8" z="6" type="lapis_block"/>
+                      <DrawBlock x="5" y="8" z="6" type="lapis_block"/>
+                      <DrawBlock x="6" y="8" z="6" type="lapis_block"/>
+                      <DrawBlock x="7" y="8" z="6" type="lapis_block"/>
+                      <DrawBlock x="8" y="8" z="6" type="lapis_block"/>
+                      <DrawBlock x="9" y="8" z="6" type="lapis_block"/>
   
 
-                      <DrawBlock x="0" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="7" type="diamond_block"/>
+                      <DrawBlock x="0" y="8" z="7" type="lapis_block"/>
+                      <DrawBlock x="1" y="8" z="7" type="lapis_block"/>
+                      <DrawBlock x="2" y="8" z="7" type="lapis_block"/>
                       <DrawBlock x="3" y="8" z="7" type="air"/>
-                      <DrawBlock x="4" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="7" type="diamond_block"/>
+                      <DrawBlock x="4" y="8" z="7" type="lapis_block"/>
+                      <DrawBlock x="5" y="8" z="7" type="lapis_block"/>
+                      <DrawBlock x="6" y="8" z="7" type="lapis_block"/>
+                      <DrawBlock x="7" y="8" z="7" type="lapis_block"/>
+                      <DrawBlock x="8" y="8" z="7" type="lapis_block"/>
+                      <DrawBlock x="9" y="8" z="7" type="lapis_block"/>
 
-                      <DrawBlock x="0" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="8" type="diamond_block"/>
+                      <DrawBlock x="0" y="8" z="8" type="lapis_block"/>
+                      <DrawBlock x="1" y="8" z="8" type="lapis_block"/>
+                      <DrawBlock x="2" y="8" z="8" type="lapis_block"/>
+                      <DrawBlock x="3" y="8" z="8" type="lapis_block"/>
                       <DrawBlock x="4" y="8" z="8" type="gold_block"/>
 
-                      <DrawBlock x="5" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="8" type="diamond_block"/>
+                      <DrawBlock x="5" y="8" z="8" type="lapis_block"/>
+                      <DrawBlock x="6" y="8" z="8" type="lapis_block"/>
+                      <DrawBlock x="7" y="8" z="8" type="lapis_block"/>
+                      <DrawBlock x="8" y="8" z="8" type="lapis_block"/>
+                      <DrawBlock x="9" y="8" z="8" type="lapis_block"/>
 
-                      <DrawBlock x="0" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="9" type="diamond_block"/>
+                      <DrawBlock x="0" y="8" z="9" type="lapis_block"/>
+                      <DrawBlock x="1" y="8" z="9" type="lapis_block"/>
+                      <DrawBlock x="2" y="8" z="9" type="lapis_block"/>
+                      <DrawBlock x="3" y="8" z="9" type="lapis_block"/>
+                      <DrawBlock x="4" y="8" z="9" type="lapis_block"/>
+                      <DrawBlock x="5" y="8" z="9" type="lapis_block"/>
+                      <DrawBlock x="6" y="8" z="9" type="lapis_block"/>
+                      <DrawBlock x="7" y="8" z="9" type="lapis_block"/>
+                      <DrawBlock x="8" y="8" z="9" type="lapis_block"/>
+                      <DrawBlock x="9" y="8" z="9" type="lapis_block"/>
 
-                      <DrawBlock x="0" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="10" type="diamond_block"/>
+                      <DrawBlock x="0" y="8" z="10" type="lapis_block"/>
+                      <DrawBlock x="1" y="8" z="10" type="lapis_block"/>
+                      <DrawBlock x="2" y="8" z="10" type="lapis_block"/>
+                      <DrawBlock x="3" y="8" z="10" type="lapis_block"/>
+                      <DrawBlock x="4" y="8" z="10" type="lapis_block"/>
+                      <DrawBlock x="5" y="8" z="10" type="lapis_block"/>
+                      <DrawBlock x="6" y="8" z="10" type="lapis_block"/>
+                      <DrawBlock x="7" y="8" z="10" type="lapis_block"/>
+                      <DrawBlock x="8" y="8" z="10" type="lapis_block"/>
+                      <DrawBlock x="9" y="8" z="10" type="lapis_block"/>
                       
 
 
