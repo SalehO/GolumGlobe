@@ -378,8 +378,8 @@ while world_state.is_mission_running:
     print(".", end="")
     time.sleep(0.1)
     if(sword ==0):
-        agent_host.sendCommand("chat /give @p diamond_sword 1 0 {ench:[{id:16,lvl:9001},{id:19,lvl:100}]}")
-        agent_host.sendCommand("chat /effect @e[type=Zombie] 2 1000000 127 true")
+        agent_host.sendCommand("chat /give @p diamond_sword 1 0 {ench:[{id:16,lvl:9001},{id:19,lvl:100}]}") #buff the sword
+        agent_host.sendCommand("chat /effect @e[type=Zombie] 2 1000000 127 true") #freeze zombie
         # agent_host.sendCommand("chat /kill @e[type=Zombie] ") kill wumbus if stepped on 
 
         sword =1
