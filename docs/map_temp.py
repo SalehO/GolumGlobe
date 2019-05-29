@@ -378,10 +378,11 @@ while world_state.is_mission_running:
     print(".", end="")
     time.sleep(0.1)
     if(sword ==0):
-        agent_host.sendCommand("chat /give @p diamond_sword 1 0 {ench:[{id:16,lvl:9001},{id:19,lvl:100}]}")
-        agent_host.sendCommand("chat /effect @e[type=Zombie] 2 1000000 127 true")
-        # agent_host.sendCommand("chat /kill @e[type=Zombie] ") kill wumbus if stepped on 
-        agent_host.sendCommand("chat /effect @p blindness 99999 255")
+        agent_host.sendCommand("chat /give @p diamond_sword 1 0 {ench:[{id:16,lvl:9001},{id:19,lvl:100}]}") #buff sword
+        agent_host.sendCommand("chat /effect @e[type=Zombie] 2 1000000 127 true") #freeze wumbus
+        # agent_host.sendCommand("chat /kill @e[type=Zombie] ") #kill wumbus if stepped on 
+        agent_host.sendCommand("chat /effect @p blindness 99999 255") #blind
+        # agent_host.sendCommand("chat  Squirrel Fun") print command
         sword =1
     world_state = agent_host.getWorldState()
     for error in world_state.errors:
