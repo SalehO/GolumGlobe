@@ -232,7 +232,7 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="4" y="8" z="4" type="diamond_block"/>
                       <DrawBlock x="5" y="8" z="4" type="diamond_block"/>
                       <DrawBlock x="6" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="4" type="diamond_block"/>
+                      <DrawBlock x="7" y="8" z="4" type="air"/>
                       <DrawBlock x="8" y="8" z="4" type="diamond_block"/>
                       <DrawBlock x="9" y="8" z="4" type="diamond_block"/>
 
@@ -285,7 +285,7 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="9" y="8" z="8" type="diamond_block"/>
 
                       <DrawBlock x="0" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="9" type="air"/>
+                      <DrawBlock x="1" y="8" z="9" type="diamond_block"/>
                       <DrawBlock x="2" y="8" z="9" type="diamond_block"/>
                       <DrawBlock x="3" y="8" z="9" type="diamond_block"/>
                       <DrawBlock x="4" y="8" z="9" type="diamond_block"/>
@@ -322,11 +322,9 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                 <Name>GolumGlobe</Name>
                 <AgentStart>
                     <Placement x="0.0" y="9.0" z="1.0" yaw="0"/>
-                    <Inventory>
-                        <InventoryItem slot="0" type = "diamond_sword"/>
-                    </Inventory>
                 </AgentStart>
                 <AgentHandlers>
+                  <ChatCommands/>
                   <ObservationFromFullStats/>
                   <ContinuousMovementCommands turnSpeedDegs="180"/>
                 </AgentHandlers>
@@ -379,6 +377,8 @@ print("Mission running ", end=' ')
 while world_state.is_mission_running:
     print(".", end="")
     time.sleep(0.1)
+    agent_host.sendCommand("chat /give @p diamond_sword 1 0 {ench:[{id:16,lvl:9001},{id:19,lvl:100}]}")
+
     world_state = agent_host.getWorldState()
     for error in world_state.errors:
         print("Error:",error.text)
