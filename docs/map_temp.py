@@ -181,7 +181,7 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="3" y="8" z="4" type="diamond_block"/>
 
                       <DrawBlock x="3" y="6" z="4" type="diamond_block"/>
-                      <DrawEntity x="3.5"  y="9" z="4.5" type="Creeper" />
+                      <DrawEntity x="3.5"  y="9" z="4.5" type="Zombie" />
                       
                       <DrawBlock x="1" y="6" z="9" type="air"/>
 
@@ -278,7 +278,6 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="2" y="8" z="8" type="diamond_block"/>
                       <DrawBlock x="3" y="8" z="8" type="diamond_block"/>
                       <DrawBlock x="4" y="8" z="8" type="gold_block"/>
-                      <DrawItem x="4" y="9" z="8" type="gold_nugget"/>
 
                       <DrawBlock x="5" y="8" z="8" type="diamond_block"/>
                       <DrawBlock x="6" y="8" z="8" type="diamond_block"/>
@@ -374,7 +373,7 @@ while not world_state.has_mission_begun:
 
 print()
 print("Mission running ", end=' ')
-# /effect @e 2 1000000 255 true
+# /effect @e 2 1000000 255 true      /kill @e[type=YourMob]    
 # Loop until mission ends:
 sword = 0
 while world_state.is_mission_running:
@@ -382,7 +381,9 @@ while world_state.is_mission_running:
     time.sleep(0.1)
     if(sword ==0):
         agent_host.sendCommand("chat /give @p diamond_sword 1 0 {ench:[{id:16,lvl:9001},{id:19,lvl:100}]}")
-        agent_host.sendCommand("chat /effect @e[type=Creeper] 2 1000000 127 true")
+        agent_host.sendCommand("chat /effect @e[type=Zombie] 2 1000000 127 true")
+        # agent_host.sendCommand("chat /kill @e[type=Zombie] ") kill wumbus if stepped on 
+
         sword =1
     world_state = agent_host.getWorldState()
     for error in world_state.errors:
