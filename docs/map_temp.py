@@ -177,7 +177,9 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 
 
 
-                      <DrawBlock x="3" y="7" z="4" type="air"/>
+                      <DrawBlock x="3" y="7" z="4" type="diamond_block"/>
+                      <DrawBlock x="3" y="8" z="4" type="diamond_block"/>
+
                       <DrawBlock x="3" y="6" z="4" type="diamond_block"/>
                       <DrawEntity x="3.5"  y="9" z="4.5" type="Creeper" />
                       
@@ -372,13 +374,16 @@ while not world_state.has_mission_begun:
 
 print()
 print("Mission running ", end=' ')
-
+# /effect @e 2 1000000 255 true
 # Loop until mission ends:
+sword = 0
 while world_state.is_mission_running:
     print(".", end="")
     time.sleep(0.1)
-    agent_host.sendCommand("chat /give @p diamond_sword 1 0 {ench:[{id:16,lvl:9001},{id:19,lvl:100}]}")
-
+    if(sword ==0):
+        agent_host.sendCommand("chat /give @p diamond_sword 1 0 {ench:[{id:16,lvl:9001},{id:19,lvl:100}]}")
+        agent_host.sendCommand("chat /effect @e[type=Creeper] 2 1000000 127 true")
+        sword =1
     world_state = agent_host.getWorldState()
     for error in world_state.errors:
         print("Error:",error.text)
