@@ -27,13 +27,11 @@ while True:
         y = 0
         x= x+1
     if c == 'G':
-      input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"8\" z= " +"\""+ str(y+1)+"\"" +" type=\"air\" />\n"
       input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"8\" z= " +"\""+ str(y+1)+"\"" +" type=\"redstone_block\" />\n"
       input_xml+= "<DrawEntity x= "+ "\"" +str(x+0.5)+"\""+ " y=\"9\" z="+ "\""+str(y+1+0.5)+"\""+" type=\"Zombie\" />\n"
     if c == 'P':
       input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"8\" z= " +"\""+ str(y+1)+"\"" +" type=\"air\" />\n"
     if c == 'T':
-      input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"8\" z= " +"\""+ str(y+1)+"\"" +" type=\"air\" />\n"
       input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"8\" z= " +"\""+ str(y+1)+"\"" +" type=\"gold_block\" />\n"
     
 
@@ -158,7 +156,7 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="9" y="7" z="10" type="air"/>
                       
                     
-                      <DrawBlock x="0" y="8" z="1" type="lapis_block"/>
+                      <DrawBlock x="0" y="8" z="1" type="emerald_block"/>
                       <DrawBlock x="1" y="8" z="1" type="lapis_block"/>
                       <DrawBlock x="2" y="8" z="1" type="lapis_block"/>
                       <DrawBlock x="3" y="8" z="1" type="lapis_block"/>
@@ -194,6 +192,7 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="0" y="8" z="4" type="lapis_block"/>
                       <DrawBlock x="1" y="8" z="4" type="lapis_block"/>
                       <DrawBlock x="2" y="8" z="4" type="lapis_block"/>
+                      <DrawBlock x="3" y="8" z="4" type="lapis_block"/>
                       <DrawBlock x="4" y="8" z="4" type="lapis_block"/>
                       <DrawBlock x="5" y="8" z="4" type="lapis_block"/>
                       <DrawBlock x="6" y="8" z="4" type="lapis_block"/>
@@ -335,7 +334,7 @@ while world_state.is_mission_running:
         agent_host.sendCommand("chat /give @p diamond_sword 1 0 {ench:[{id:16,lvl:9001},{id:19,lvl:100}]}") #buff sword
         agent_host.sendCommand("chat /effect @e[type=Zombie] 2 1000000 127 true") #freeze wumbus
         # agent_host.sendCommand("chat /kill @e[type=Zombie] ") #kill wumbus if stepped on 
-        # agent_host.sendCommand("chat /effect @p blindness 99999 255") #blind
+        agent_host.sendCommand("chat /effect @p blindness 99999 255") #blind
         # agent_host.sendCommand("chat  Squirrel Fun") print command
         sword =1
     world_state = agent_host.getWorldState()
