@@ -16,7 +16,7 @@ Filename = open('C:\\Users\\omarh\Malmo-0.36.0-Windows-64bit_withBoost_Python3.6
 x = 0
 y =0      
 input_xml = "" 
-test_xml = ""          
+# test_xml = ""    redstone_block      
 while True:
     c = Filename.read(1)
     if not c:
@@ -28,6 +28,7 @@ while True:
         x= x+1
     if c == 'G':
       input_xml+= "<DrawEntity x= "+ "\"" +str(x+0.5-1)+"\""+ " y=\"9\" z="+ "\""+str(y+1+0.5-1)+"\""+" type=\"Zombie\" />\n"
+      input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"6\" z= " +"\""+ str(y+1)+"\"" +" type=\"redstone_block\" />\n"
     if c == 'P':
       input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"6\" z= " +"\""+ str(y+1)+"\"" +" type=\"air\" />\n"
     if c == 'T':
