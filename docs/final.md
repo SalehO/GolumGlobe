@@ -83,6 +83,7 @@ The agent is rewarded (+) or penalized(-) for the following actions:
 | | - Being killed by a monster | 
 | | - Failing the mission (too many steps taken) | 
 | +100 | - Finding the treasure/gold | 
+{: .tablelines}
 
 ## Evaluation
 
