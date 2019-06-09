@@ -70,11 +70,7 @@ The agent begins with 0 points at the start of every mission.
 
 The agent is rewarded (+) or penalized(-) for the following actions:
   
-| +/- Points | Action |
-| :--- | :--- |
-| -1000 | - Killed (fell into a pit, killed by a monster, reached maximum number of allowed steps)  |
-| 1000 | - Gold has been found (agent is standing on the block of gold and can see the glitter)  |
-| -200 | - The agent feels a breeze or smells a stench | 
+<img align="center" src="https://github.com/soberanc/GolemGlobe/blob/master/docs/observation_exp3.PNG">
 
 ## Evaluation
 
