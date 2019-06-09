@@ -15,7 +15,7 @@ Golem Globe, is a modified implementation of Wumpus World in Minecraft. The worl
 The agent navigates through the map by utilizing a reinforced learning algorithm incorporating a Q-Table to store observations. The agent remembers observations from previous maps and uses those observations of previous maps along with the Q-table from the current map to learn and choose what step to take next. 
 
 ## Source code:
-[Proposal](https://github.com/soberanc/GolemGlobe)
+[Code](https://github.com/soberanc/GolemGlobe)
 
 
 
