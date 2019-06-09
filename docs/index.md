@@ -9,7 +9,7 @@ title: Golem Globe
 
 ## What is Golem Globe?
 
-Golem Globe, is a modified implementation of Wumpus World in Minecraft. The world is a 10x10 grid map that contains a moster, gold and any number of pits. The agent only has observation of the current bock it is on, in other words, it does not know where the gold, pits, or monster is located on the map. However when the agent is adjacent to a pit it feels/observes a breeze, and when when it is adjacent to the monster it smells a stench and when it is on the block that has the gold it feels glitter. To win the game the agent needs to navigate through the map to find the gold.  
+Golem Globe, is a modified implementation of Wumpus World in Minecraft. In Golem Globe the world is a 10x10 grid map that contains a monster, gold and any number of pits. The agent only has observation of the current block it is on, in other words, it does not know where the gold, pits, or monster is located on the map. However when the agent is adjacent to a pit it feels/observes a breeze, and when it is adjacent to the monster it smells a stench and when it is on the block that has the gold it feels glitter. To win the game the agent needs to navigate through the map to find the gold.  
 
 ### Rules of the Game 
 - An agent's observations are limited to that of the blocks that they have been to already (explored). 
@@ -61,7 +61,7 @@ Now let's say that the agent decides to go on to this new block :smiley: (image 
 At this point the agent observes a smell on this block indicating that there is a monster adjacent to their current block. With all of their previous observations they can now infer that the block above their current position has a high likelihood that there is a monster there due to the fact that the block "B" also exhibits a stench. 
 
 ## How does the agent work? 
-The agent navigates through the map by utilizing a reinforced learning algorithm incorporating a Q-Table to store observations. The agent remembers observations from previous maps and uses those observations of previous maps along with the Q-table from the current map to learn and choose what step to take next. 
+The agent navigates through the map by utilizing a reinforced learning algorithm incorporating a Q-Table to store observations. The agent remembers observations from previous maps and uses those observations of previous maps along with the Q-table from the current map to learn and choose what step to take next. For more information regarding our Golem Globe Minecraft AI please visit our [Final Report](https://soberanc/github.io/GolemGlobe/final.md)
 
 ## Source code:
 - [Code](https://github.com/soberanc/GolemGlobe)
