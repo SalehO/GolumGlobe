@@ -25,7 +25,6 @@ Golem Globe, is a modified implementation of Wumpus World in Minecraft. In Golem
 In Golem Globe, the environment consists of: 
 
 <img align="left" width="175" height="175" src="observations_map.jpg">
-![]("observations_map.jpg")
 
 - A single emerald block as the starting point 
 - A single gold block where the gold/treasure is located
@@ -33,8 +32,6 @@ In Golem Globe, the environment consists of:
   - For the purpose of this game (traversal and observations) we often refer to the monster as the wumpus, the golem, or a specific type of monster (ie. a zombie) depending on what appears on the map. 
 - At least one pit in the platform. 
   
- 
-
 #### The Observations 
 To survive their mission the agent must make observations of their immediate surroundings (the block that they are on), remember these observations, and make decisions based on their observations. An agent is not able to determine what is adjacent to them (up, down, left, or right) unless they have already been on that block. 
 
