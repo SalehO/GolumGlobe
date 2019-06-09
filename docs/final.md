@@ -66,17 +66,15 @@ To start, the agent was trained on a static map with only one pit and one monste
 By running the agent on the same map and recording the results of previous attempts, the agent begins to associate the observations it made with the reward that it was given, and thus learns which actions to undertake to maximize the reward. 
 
 ### Reward System 
-The agent begins with +100 points when they first start their mission (each attempt). 
+The agent begins with 0 points at the start of every mission. 
 
 The agent is rewarded (+) or penalized(-) for the following actions:
   
 | +/- Points | Action |
 | :--- | :--- |
-| -1 | - Traversing to a block without dying  |
-| -100 | -Falling into a pit  |
-| | - Being killed by a monster | 
-| | - Failing the mission (too many steps taken) | 
-| +100 | - Finding the treasure/gold | 
+| -1000 | - Killed (fell into a pit, killed by a monster, reached maximum number of allowed steps)  |
+| 1000 | - Gold has been found (agent is standing on the block of gold and can see the glitter)  |
+| -200 | - The agent feels a breeze or smells a stench | 
 
 ## Evaluation
 
