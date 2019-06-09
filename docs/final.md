@@ -19,6 +19,8 @@ Golem Globe, inspired by Wumpus World, is an environment in which a Minecraft ag
 - There is ever only one block of gold (treasure) in every map. 
 - There is a limited number of steps that the agent can take per mission. If they pass that limit then they "die" and fail their mission. 
 
+#### The Environment 
+
 ## Approaches 
 
 ## Evaluation
