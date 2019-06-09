@@ -46,15 +46,15 @@ If the agent does not observe any of the above percepts then they are free to mo
 
 For example: 
 
-<img align="left" src="https://github.com/soberanc/GolemGlobe/docs/observation_exp1.PNG">
+<img align="left" src="observation_exp1.PNG">
 
 If the agent is standing on a block and they "smell" a stench, it is an indicator that there is a monster adjacent to them (up, down, left, or right). For example, say the agent :smiley: has only been to the block it is on now. The only observations it has made from this 3x3 grid is that they smell a stench. Their only knowledge at this point is that anywhere "A" adjacent to them there must be a monster. 
 
-<img align="right" src="https://github.com/soberanc/GolemGlobe/blob/master/docs/observation_exp2.PNG">
+<img align="right" src="observation_exp2.PNG">
 
 Now imagine (image on the right) that the agent has the observations :alien: and is currently standing on the block :smiley:. Now their observations show that above their current location there is a smell however in their current location they do not observe anything. 
 
-<img align="left" src="https://github.com/soberanc/GolemGlobe/blob/master/docs/observation_exp3.PNG" />
+<img src="observation_exp3.PNG" align="left" >
 
 Now let's say that the agent decides to go on to this new block :smiley: (image on the left). Their observations include all of the observations it made from previous moves :alien:. 
 
