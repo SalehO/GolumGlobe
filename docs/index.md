@@ -24,7 +24,7 @@ Golem Globe, is a modified implementation of Wumpus World in Minecraft. In Golem
 #### The Environment 
 In Golem Globe, the environment consists of: 
 
-<img align="left" width="175" height="175" src="https://github.com/soberanc/GolemGlobe/blob/master/docs/observations_map.jpg">
+<img align="left" width="175" height="175" src="observations_map.jpg">
 
 - A single emerald block as the starting point 
 - A single gold block where the gold/treasure is located
