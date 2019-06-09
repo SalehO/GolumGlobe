@@ -20,10 +20,10 @@ Golem Globe, inspired by Wumpus World, is an environment in which a Minecraft ag
 - There is a limited number of steps that the agent can take per mission. If they pass that limit then they "die" and fail their mission. 
 
 #### The Environment 
+In Golem Globe, the environment consists of: 
 
 <img align="left" src="https://github.com/soberanc/GolemGlobe/blob/master/docs/observations_map.jpg">
 
-In Golem Globe, the environment consists of: 
 - A single emerald block as the starting point 
 - A single gold block where the gold/treasure is located
 - Multiple redstone blocks where a monster stands - these blocks can be located within pits 
