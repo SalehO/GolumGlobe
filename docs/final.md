@@ -54,7 +54,7 @@ Now imagine (image on the right) that the agent has the observations :alien: and
 
 <img align="left" src="https://github.com/soberanc/GolemGlobe/blob/master/docs/observation_exp3.PNG">
 
-Now let's say that the agent decides to go on to this new block :smiley:. Their observations include all of the observations it made from previous moves :alien:. 
+Now let's say that the agent decides to go on to this new block :smiley: (image on the left). Their observations include all of the observations it made from previous moves :alien:. 
 
 At this point the agent observes a smell on this block indicating that there is a monster adjavent to their current block. With all of their previous observations they can now infer that the block above their current position has a high likelihood that there is a monster there due to the fact that the block "B" also exhibits a stench. 
 
