@@ -34,9 +34,9 @@ To survive their mission the agent must make observations of their immediate sur
 
 Possible Percepts: 
 
-“Smell” : If the agent smells a stench, there is a monster adjacent to (up, down, left, or right) the current block 
-“Breeze: If the agent feels a breeze, there is a pit adjacent to (up, down, left, or right) the current block  
-“Glitter”: If the agent sees glitter, they have located the gold 
+- “Smell” : If the agent smells a stench, there is a monster adjacent to (up, down, left, or right) the current block 
+- “Breeze: If the agent feels a breeze, there is a pit adjacent to (up, down, left, or right) the current block  
+- “Glitter”: If the agent sees glitter, they have located the gold 
 
 
 If the agent does not observe any of the above percepts then they are free to move in any direction (up, down, left, or right) without fear of running into a pit. 
