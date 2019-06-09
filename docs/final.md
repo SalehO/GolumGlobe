@@ -21,6 +21,17 @@ Golem Globe, inspired by Wumpus World, is an environment in which a Minecraft ag
 
 #### The Environment 
 
+![](https://github.com/soberanc/GolemGlobe/blob/master/docs/observations_map.jpg)
+
+In Golem Globe, the environment consists of: 
+- A single emerald block as the starting point 
+- A single gold block where the gold/treasure is located
+- Multiple redstone blocks where a monster stands - these blocks can be located within pits 
+  - For the purpose of this game (traversal and observations) we often refer to the monster as the wumpus, the golem, or a specific type of monster (ie. a zombie) depending on what appears on the map. 
+  
+#### The Observations 
+  
+
 ## Approaches 
 
 ## Evaluation
