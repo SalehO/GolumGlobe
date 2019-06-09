@@ -56,9 +56,27 @@ Now imagine (image on the right) that the agent has the observations :alien: and
 
 Now let's say that the agent decides to go on to this new block :smiley: (image on the left). Their observations include all of the observations it made from previous moves :alien:. 
 
-At this point the agent observes a smell on this block indicating that there is a monster adjavent to their current block. With all of their previous observations they can now infer that the block above their current position has a high likelihood that there is a monster there due to the fact that the block "B" also exhibits a stench. 
+At this point the agent observes a smell on this block indicating that there is a monster adjacent to their current block. With all of their previous observations they can now infer that the block above their current position has a high likelihood that there is a monster there due to the fact that the block "B" also exhibits a stench. 
 
 ## Approaches 
+To train our agent we incorporated reinforcement learning through Q-Tables in which the agent will record their observations made on a given map as they explore that map in search of the gold. 
+
+To start, the agent was trained on a static map with only one pit and one monster. As the agent explores their environment in search of the gold they are rewarded for successful traversals and penalized for dying (either from falling into a pit or being killed by a monster). During a traversal, the agent stores in memory all previous observations it made and associates them with a respective reward. When the agent is done traversing (either by finding the gold or from dying) it maps all the previous actions it made to the total rewards received. We created our agent to prioritize the long-term reward, and added some randomness so that it would encounter more scenarios. 
+
+By running the agent on the same map and recording the results of previous attempts, the agent begins to associate the observations it made with the reward that it was given, and thus learns which actions to undertake to maximize the reward. 
+
+### Reward System 
+The agent begins with +100 points when they first start their mission (each attempt). 
+
+The agent is rewarded (+) or penalized(-) for the following actions: 
+
+| +/- Points | Action |
+| :--- | :--- |
+| -1 | - Traversing to a block without dying  |
+| -100 | -Falling into a pit  |
+| | - Being killed by a monster | 
+| | - Failing the mission (too many steps taken) | 
+| +100 | - Finding the treasure/gold | 
 
 ## Evaluation
 
