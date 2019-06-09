@@ -54,7 +54,7 @@ If the agent is standing on a block and they "smell" a stench, it is an indicato
 
 Now imagine (image on the right) that the agent has the observations :alien: and is currently standing on the block :smiley:. Now their observations show that above their current location there is a smell however in their current location they do not observe anything. 
 
-<img src="observation_exp3.PNG" align="left" >
+<img src="observation_exp3.png" align="left" />
 
 Now let's say that the agent decides to go on to this new block :smiley: (image on the left). Their observations include all of the observations it made from previous moves :alien:. 
 
