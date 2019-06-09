@@ -70,7 +70,7 @@ The agent begins with 0 points at the start of every mission.
 
 The agent is rewarded (+) or penalized(-) for the following actions:
   
-![]{https://github.com/soberanc/GolemGlobe/blob/master/docs/table%20of%20rewards.PNG}
+![](https://github.com/soberanc/GolemGlobe/blob/master/docs/table%20of%20rewards.PNG)
 ## Evaluation
 
 ## References 
