@@ -70,6 +70,12 @@ The agent begins with +100 points when they first start their mission (each atte
 
 The agent is rewarded (+) or penalized(-) for the following actions: 
 
+<style> 
+  .tablelines table, .tablelines td, .tablelines th {
+    border: 1px solid black;
+  }
+</style 
+  
 | +/- Points | Action |
 | :--- | :--- |
 | -1 | - Traversing to a block without dying  |
