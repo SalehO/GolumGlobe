@@ -27,7 +27,7 @@ In Golem Globe, the environment consists of:
 * A single emerald block as the starting point 
 * A single gold block where the gold/treasure is located
 * Multiple redstone blocks where a monster stands - these blocks can be located within pits 
-  * For the purpose of this game (traversal and observations) we often refer to the monster as the wumpus, the golem, or a specific type of monster (ie. a zombie) depending on what appears on the map. 
+   * For the purpose of this game (traversal and observations) we often refer to the monster as the wumpus, the golem, or a specific type of monster (ie. a zombie) depending on what appears on the map. 
   
 #### The Observations 
 To survive their mission the agent must make observations of their immediate surroundings (the block that they are on), remember these observations, and make decisions based on their observations. An agent is not able to determine what is adjacent to them (up, down, left, or right) unless they have already been on that block. 
