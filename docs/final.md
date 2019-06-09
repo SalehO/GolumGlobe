@@ -30,7 +30,16 @@ In Golem Globe, the environment consists of:
   - For the purpose of this game (traversal and observations) we often refer to the monster as the wumpus, the golem, or a specific type of monster (ie. a zombie) depending on what appears on the map. 
   
 #### The Observations 
-  
+To survive their mission the agent must make observations of their immediate surroundings (the block that they are on), remember these observations, and make decisions based on their observations. An agent is not able to determine what is adjacent to them (up, down, left, or right) unless they have already been on that block. 
+
+Possible Percepts: 
+
+“Smell” : If the agent smells a stench, there is a monster adjacent to (up, down, left, or right) the current block 
+“Breeze: If the agent feels a breeze, there is a pit adjacent to (up, down, left, or right) the current block  
+“Glitter”: If the agent sees glitter, they have located the gold 
+
+
+If the agent does not observe any of the above percepts then they are free to move in any direction (up, down, left, or right) without fear of running into a pit. 
 
 ## Approaches 
 
