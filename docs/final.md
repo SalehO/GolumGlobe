@@ -21,7 +21,7 @@ Golem Globe, inspired by Wumpus World, is an environment in which a Minecraft ag
 
 #### The Environment 
 
-![](https://github.com/soberanc/GolemGlobe/blob/master/docs/observations_map.jpg)
+<img align="left" src="https://github.com/soberanc/GolemGlobe/blob/master/docs/observations_map.jpg">
 
 In Golem Globe, the environment consists of: 
 - A single emerald block as the starting point 
