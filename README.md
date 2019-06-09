@@ -8,5 +8,6 @@ Golem Globe, is a modified implementation of Wumpus World in Minecraft. The worl
 
 ## How does the agent work? 
 The agent navigates through the map by utilizing a Q-table algorithim as well as neaural network algirithim. The agent remembers observations from previous maps and uses those observations of previous maps along with the Q-table from the current map to learn and choose what step to take next. After the agent finds the gold, it used Dijkstra's shortest path algorithim to find the shortest path back to the starting position.
+
 For more information please see our status page:
 https://soberanc.github.io/GolemGlobe/status.html
