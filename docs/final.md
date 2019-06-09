@@ -48,7 +48,7 @@ For example:
 
 If the agent is standing on a block and they "smell" a stench, it is an indicator that there is a monster adjacent to them (up, down, left, or right). For example, say the agent :smiley: has only been to the block it is on now. The only observations it has made from this 3x3 grid is that they smell a stench. Their only knowledge at this point is that anywhere "A" adjacent to them there must be a monster. 
 
-<img align="right" src="https://github.com/soberanc/GolemGlobe/blob/master/docs/observation_exp2.PNG">
+<img align="left" src="https://github.com/soberanc/GolemGlobe/blob/master/docs/observation_exp2.PNG">
 
 Now imagine that the agent has the observations :alien: and is currently standing on the block :smiley:. Now their observations show that above their current location there is a smell however in their current location they do not observe anything. 
 
