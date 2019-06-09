@@ -68,13 +68,7 @@ By running the agent on the same map and recording the results of previous attem
 ### Reward System 
 The agent begins with +100 points when they first start their mission (each attempt). 
 
-The agent is rewarded (+) or penalized(-) for the following actions: 
-
-<style> 
-  .tablelines table, .tablelines td, .tablelines th {
-    border: 1px solid black;
-  }
-</style 
+The agent is rewarded (+) or penalized(-) for the following actions:
   
 | +/- Points | Action |
 | :--- | :--- |
@@ -83,7 +77,6 @@ The agent is rewarded (+) or penalized(-) for the following actions:
 | | - Being killed by a monster | 
 | | - Failing the mission (too many steps taken) | 
 | +100 | - Finding the treasure/gold | 
-{: .tablelines}
 
 ## Evaluation
 
