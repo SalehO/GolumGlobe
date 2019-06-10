@@ -61,7 +61,7 @@ Now let's say that the agent decides to go on to this new block :smiley: (image 
 At this point the agent observes a smell on this block indicating that there is a monster adjacent to their current block. With all of their previous observations they can now infer that the block above their current position has a high likelihood that there is a monster there due to the fact that the block "B" also exhibits a stench. 
 
 ## How does the agent work? 
-The agent navigates through the map by utilizing a reinforced learning algorithm incorporating a Q-Table to store observations. The agent remembers observations from previous maps and uses those observations of previous maps along with the Q-table from the current map to learn and choose what step to take next. For more information regarding our Golem Globe Minecraft AI please visit our [Final Report](https://soberanc/github.io/GolemGlobe/final.md)
+The agent navigates through the map by utilizing a reinforced learning algorithm incorporating a Q-Table to store observations. The agent remembers observations from previous maps and uses those observations of previous maps along with the Q-table from the current map to learn and choose what step to take next. For more information regarding our Golem Globe Minecraft AI please visit our [Final Report](https://soberanc.github.io/GolemGlobe/final.md)
 
 ## Source code:
 - [Code](https://github.com/soberanc/GolemGlobe)
