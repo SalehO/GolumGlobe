@@ -20,8 +20,7 @@ By running the agent on the same map and recording the results of previous attem
 The agent begins with 0 points at the start of every mission. 
 
 The agent is rewarded (+) or penalized(-) for the following actions:
-  
-![](https://github.com/soberanc/GolemGlobe/blob/master/docs/table_of_rewards.PNG)
+  ![] (https://github.com/soberanc/GolemGlobe/blob/master/docs/table_of_rewards.PNG)
 ## Evaluation
 
 ## References 
