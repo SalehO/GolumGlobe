@@ -68,6 +68,6 @@ The agent navigates through the map by utilizing a reinforced learning algorithm
 
 ### Reports:
 
- - [Proposal](https://github.com/soberanc/GolemGlobe/blob/master/docs/proposal.md)
+ - [Proposal](https://soberanc.github.io/GolemGlobe/proposal.html)
  - [Status Report](https://soberanc.github.io/GolemGlobe/status.html)
- - [Final](https://soberanc.github.io/GolemGlobe/final.md)
+ - [Final](https://soberanc.github.io/GolemGlobe/final.html)
