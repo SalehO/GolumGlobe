@@ -1,0 +1,64 @@
+Christine: <Salli> 
+William: <Joey>
+Omar: <Matthew> 
+
+<voice name="Matthew"> Hi everyone, welcome to our CS175 Project final report. My name is Omar.</voice>
+<voice name="Joey"> I’m William </voice>
+<voice name="Salli"> and I’m Christine </voice>
+
+<voice name="Matthew"> For our project we chose to create a minecraft version of Wumpus World. Welcome to Golem Globe! </voice>
+
+<voice name="Salli"> Golem globe’s platform environment consists of pits, monsters, and a single gold pile.</voice>
+
+<voice name="Joey"> We created an agent whose objective is to navigate the map and find the treasure. If the agent is able to find the treasure without dying first, we call that a successful traversal.</voice>
+
+<voice name="Matthew"> To traverse the map the agent will have to remember different types of observations to be successful. If they smell a golem, the agent must realize that they are next to a golem. If they feel a breeze they must realize that they are beside a pit. These observations must be used to successfully complete their mission. If the agent sees glitter it is a sign that they have found the gold, must retrieve it, and exit from the map without dying. In our current version of Golem globe, if our agent falls into the pit they will die and the mission will have been a failure. </voice>
+
+# edit this a little bit
+<voice name="Joey"> We are using Q-table to train our agent, and to help the agent adapt to running on new maps we save the Q-tables from previous runs and we use those observations to help decide what next move the agent should take, in the Q-table we store a three by three grid that contains a mix of observations, actions and rewards of each state. </voice>
+
+<voice name="Matthew">We also added a certain ratio of randomness to our agent’s moves to make sure it explores new tiles instead of only going only based on the Q-table observations which would sometimes causes the agent to repeat the same moves over and over.</voice>
+
+<voice name="Salli"> Please note that in this following demonstration, we are using a gold block to represent the treasure and a Zombie to represent the golem.</voice>
+
+<voice name="Matthew"> Lets watch a clip of our agent training on a new map without using any previous observations and with a low randomness ratio of point four five </voice>
+
+<voice name="Joey"> Huh, well that was terrible.</voice>
+<voice name="Matthew"> Maybe we should train our agent for longer on multiple maps and use the Q-table observations from the previous runs</voice>
+
+<voice name="Salli"> That sounds like a good idea. Let’s watch a clip of our agent training with randomness ratio of point one five.</voice>
+
+
+<voice name="Joey"> That definitely made a difference! </voice>
+
+<voice name="Matthew"> Yes! Now our agent is able to complete some of his missions! Let’s see how well he does after it is done training. </voice>
+
+
+<voice name="Salli"> Wow! Now he’s completely most if not all of his missions successfully, in very few steps! </voice>
+
+
+<voice name="Salli"> Thank you all for watching! </voice>
+
+
+
+#                                                               Ignore
+<speak>
+    
+    <voice name="Ivy"> eye am not a real human.</voice>.
+    <voice name="Joanna"> eye am not a real human.</voice>.
+    <voice name="Joey"> eye am not a real human.</voice>.
+    <voice name="Justin"> eye am not a real human.</voice>.
+    <voice name="Kendra"> eye am not a real human.</voice>.
+    <voice name="Kimberly"> eye am not a real human.</voice>.
+    <voice name="Matthew"> eye am not a real human.</voice>.
+    <voice name="Salli"> eye am not a real human.</voice>.
+    
+</speak>
+
+
+
+<voice name="Matthew">Omar: Hi everyone, welcome to our CS175 Project Status report. My name is Omar.</voice>.
+<voice name="Joey">William: I’m William </voice>.
+<voice name="Salli">: and I’m Christine</voice>.
+
+
