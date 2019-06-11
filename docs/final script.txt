@@ -12,30 +12,25 @@ Omar: <Matthew>
 
 <voice name="Joey"> We created an agent whose objective is to navigate the map and find the treasure. If the agent is able to find the treasure without dying first, we call that a successful traversal.</voice>
 
-<voice name="Matthew"> To traverse the map the agent will have to remember different types of observations to be successful. If they smell a golem, the agent must realize that they are next to a golem. If they feel a breeze they must realize that they are beside a pit. These observations must be used to successfully complete their mission. If the agent sees glitter it is a sign that they have found the gold, must retrieve it, and exit from the map without dying. In our current version of Golem globe, if our agent falls into the pit they will die and the mission will have been a failure. </voice>
+<voice name="Matthew"> To traverse the map the agent will have to remember different types of observations to be successful. If they smell a golem, the agent must realize that they are next to a golem. If they feel a breeze they must realize that they are beside a pit. These observations must be used to successfully complete their mission. If the agent sees glitter it is a sign that they have found the gold. In our current version of Golem globe, if our agent falls into the pit they will die and the mission will have been a failure. </voice>
 
 # edit this a little bit
-<voice name="Joey"> We are using Q-table to train our agent, and to help the agent adapt to running on new maps we save the Q-tables from previous runs and we use those observations to help decide what next move the agent should take, in the Q-table we store a three by three grid that contains a mix of observations, actions and rewards of each state. </voice>
+<voice name="Joey"> We are using Q-table to train our agent, and to help the agent adapt to running on new maps we save the Q-tables from previous runs and we use those observations to help decide what next move the agent should take, in the Q-table we store a three by three grid that contains a of observations and their associated rewards and actions. </voice>
 
 <voice name="Matthew">We also added a certain ratio of randomness to our agent’s moves to make sure it explores new tiles instead of only going only based on the Q-table observations which would sometimes causes the agent to repeat the same moves over and over.</voice>
 
 <voice name="Salli"> Please note that in this following demonstration, we are using a gold block to represent the treasure and a Zombie to represent the golem.</voice>
 
-<voice name="Matthew"> Lets watch a clip of our agent training on a new map without using any previous observations and with a low randomness ratio of point four five </voice>
+<voice name="Matthew"> Lets watch a clip of our agent training on a new map without using any previous observations and with a high randomness ratio of point four five </voice>
 
-<voice name="Joey"> Huh, well that was terrible.</voice>
-<voice name="Matthew"> Maybe we should train our agent for longer on multiple maps and use the Q-table observations from the previous runs</voice>
-
-<voice name="Salli"> That sounds like a good idea. Let’s watch a clip of our agent training with randomness ratio of point one five.</voice>
+<voice name="Joey"> Huh, after multiple trials the agent was able to adapt to this new map, if we train our agent on multiple maps we can speed up the training and find the gold more quickly, here is a video of it after training on twenty maps</voice>
 
 
 <voice name="Joey"> That definitely made a difference! </voice>
 
-<voice name="Matthew"> Yes! Now our agent is able to complete some of his missions! Let’s see how well he does after it is done training. </voice>
+<voice name="Matthew"> After our agent has a catalog of observations we decreased the randomness to point one five which means that our agent will take less risky moves which could result in death </voice>
 
-
-<voice name="Salli"> Wow! Now he’s completely most if not all of his missions successfully, in very few steps! </voice>
-
+<voice name="Salli"> Wow, who knew a computer can use reinforced learning to navigate a dangerous Golem Globe map</voice>
 
 <voice name="Salli"> Thank you all for watching! </voice>
 
