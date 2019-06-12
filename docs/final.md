@@ -23,7 +23,7 @@ The agent is rewarded (+) or penalized(-) for the following actions
 
 ![](https://github.com/soberanc/GolemGlobe/blob/master/docs/table_of_rewards.PNG)
 
-| +/- Points | Action |
+| _+/- Points_ | _Action_ |
 | :--- | :--- | 
 | -1000| - Killed (fell into a pit, killed by a monster, reached maximum number of allowed steps) | 
 | +1000 | - Gold has been located (agent is standing on the block of gold and can see the glitter) 
