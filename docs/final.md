@@ -23,6 +23,8 @@ The agent is rewarded (+) or penalized(-) for the following actions
 
 ![](https://github.com/soberanc/GolemGlobe/blob/master/docs/table_of_rewards.PNG)
 
+<img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/table_of_rewards.PNG">
+
 ## Evaluation
 
 ## References 
