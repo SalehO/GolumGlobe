@@ -35,6 +35,7 @@ The agent is rewarded (+) or penalized(-) for the following actions
 | -1000| - Killed (fell into a pit, killed by a monster, reached maximum number of allowed steps) | 
 | +1000 | - Gold has been located (agent is standing on the tile of gold and can see the glitter) |
 
+
 For every step that an agent takes, be it to an explored tile or to a new tile, they are awarded with -2 points. Every new tile that an agent explores however awards the agent with +3 points. So on an agent's very first attempt on a map every step that leads them to explore a new tile awards them with (+3) + (-2) = +1 point. This encourages an agent to explore the environment. This is especially helpful if the agent has explored most of the tiles on the 10x10 grid and have yet to locate the gold. The agent is encouraged to explore the unexplored areas in hopes of locating the gold. 
 
 If the agent steps on a tile and observes either a breeze or a stench they receive -200 points. This discourages the agent from attempting the same blocks on their next attempt due to the danger surrounding it and encourages them to explore other areas of their environment. The loss in points however still allows the agent to attempt these tiles if they find no other way around it. 
