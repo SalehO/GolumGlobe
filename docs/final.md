@@ -85,6 +85,7 @@ The main equation we used for our algorithm was the following to determine the e
 $$
 \begin{align*}
     & \sum_{t=0}^inf \ gamma^t r_t
+\end{align*}
 $$
 
 ### What Did Not Work 
