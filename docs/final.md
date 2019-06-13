@@ -79,6 +79,14 @@ The values of each key is a list of tuples that represent the differnt actions t
     
 Here the "f" indicates that the agent had fallen once and received -10000 points and that they had felt a breeze several times in the previous attempts and 5 times during the current attempt. 
 
+### Equations For Q-Learning 
+The main equation we used for our algorithm was the following to determine the expected rewards for each step that the agent could take: 
+
+$$
+\begin{align*}
+    & \sum_{t=0}^inf \ gamma^t r_t
+$$
+
 ### What Did Not Work 
 - In the early stages of our project we were storing the Q-Table as a dictionary in which the keys were the map indices (a single tile inthe map). We later realized that this method was not efficient nor useful as the agent was only able to learn about the current map and was not able to generalize other maps. 
 
@@ -122,3 +130,4 @@ Our mooonshot case is to create an agent that stops dying and is always able to 
 Below is a list of resources we found helpful throughout the development of our project
  - [For monster and item types that can be placed on the map upon start of the mission](https://github.com/microsoft/malmo/blob/master/Schemas/Types.xsd.in)
  - [Tabular Q Learning](https://github.com/Microsoft/malmo/blob/master/Malmo/samples/Python_examples/tabular_q_learning.py)
+ - [Gamma Equation for Q-Learning](https://en.wikipedia.org/wiki/Q-learning)
