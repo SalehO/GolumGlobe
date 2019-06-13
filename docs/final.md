@@ -59,6 +59,7 @@ Below is an example of how we are storing our Q-Tables on file. All Q-Tables are
 `W U U W S C W C C`
 
 This string can be read as the following 3x3 grid: 
+| --- | --- | --- |
 | W | U | U | 
 | W | S | C | 
 | W | C | C | 
