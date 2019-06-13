@@ -21,8 +21,6 @@ The agent begins with 0 points at the start of every mission.
 
 The agent is rewarded (+) or penalized(-) for the following actions
 
-![](https://github.com/soberanc/GolemGlobe/blob/master/docs/table_of_rewards.PNG)
-
 | _ +/- Points _ |  Action _ |
 | :--- | :--- | 
 | -1000| - Killed (fell into a pit, killed by a monster, reached maximum number of allowed steps) | 
@@ -39,5 +37,14 @@ Once the agent has found the gold they receive 1000 points for their completing 
 After accomplishing their mission once, we allow the agent to attempt the same mission (the same map) until they learn how to traverse their environment without dying. 
 
 ## Evaluation
+The evaluate the performance of our agent we are using a combinatino of qualitative and quantitative metrics. 
+
+### Quantitative: 
+The primary quantitative metrics we will use is the cummulative reward received and the success rate. The cummulative reward is calculated by simply summing up the agents rewards from all action that it took. The succes rate is the ratio of successful traversals to total attempts made. If our agent receives on average a higher cummulative reward, and achieve a greater success rate we consider that a successful implementation. 
+
+### Qualitative: 
+To verify that the project works we will begin the AI on a controlled map that will not change (training data). If the AI succeeds they will move on to randomized maps for testing and learning. Qualitatively, we will consider the difficulty of the maps our agent can successfully traverse, and how easily it can adapt to new maps. 
+
+Our mooonshot case is to create an agent that stops dying and is always able to retrieve the gold for every map. 
 
 ## References 
