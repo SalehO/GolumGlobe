@@ -59,10 +59,13 @@ In addition to a "current" memory, an agent, if they have already had a chance t
 
 This "previous" memory is also a Q-Table of 3x3 grids of the map that the agent has already explored (cummulative - for all attempts) that consolidates all previous attempt's data. 
 
-Although an agent is influenced by their "previous" memories they are mostly influenced by their "current" memory. "Previous" memory is mainly used for discouraging an agent to make fatal decisions (any kind of decision that will cause they to die). This knowledge of fatal mistakes assists the agent in surviving long enough for them to find a new fatal step or for them to find the gold. 
+Although an agent is influenced by their "previous" memories they are mostly influenced by their "current" memory. "Previous" memory is mainly used for discouraging an agent to make fatal decisions (any kind of decision that will cause them to die). This knowledge of fatal mistakes assists the agent in surviving long enough for them to find a new fatal step or for them to find the gold. 
 
-## Evaluation
-The evaluate the performance of our agent we are using a combinatino of qualitative and quantitative metrics. 
+The influence of the "previous" memories is determiend by an siFactor in our code that ranges between 0 and 1 (can be changed manually). If the siFactor is at 1, the "previous" memory is the main memory that the agent uses to make decisions. If the siFactor is at 0 then the "current" memory is the main memory that the agent utilizes. Our project uses an siFactor of 0.2 so that only fatal actions from "previous" memory is accounted for when calculating the expected rewards of a certain action that an agent must take.  
+
+## Evaluations
+
+
 
 ### Quantitative: 
 The primary quantitative metrics we will use is the cummulative reward received and the success rate. The cummulative reward is calculated by simply summing up the agents rewards from all action that it took. The succes rate is the ratio of successful traversals to total attempts made. If our agent receives on average a higher cummulative reward, and achieve a greater success rate we consider that a successful implementation. 
