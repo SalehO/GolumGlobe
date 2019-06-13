@@ -62,6 +62,7 @@ Below is an example of how we are storing our Q-Tables on file. All Q-Tables are
 
 This string can be read as the following 3x3 grid: 
 
+|  |  |  |
 | :--- | :---: | :--- |
 | W | U | U | 
 | W | S | C | 
@@ -77,6 +78,8 @@ The letters represent:
 | C | "clear" | a tile the agent has explored but contained no precepts | 
 | B | "breeze" | represents the tiles in which the agent observes a breeze | 
 | F | "fell" | represents a section of the map in which the agent has fallen into a pit and died | 
+| M | "mauled" | represents a section of the map in which the agent has walked into a golem and died |
+| K | "killed" | represents a section of the map in which the agent has killed a golem |
 
 
 ## Evaluations
