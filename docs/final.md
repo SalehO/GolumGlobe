@@ -67,25 +67,19 @@ Below is an example of how we are storing our Q-Tables on file. All Q-Tables are
 
 This string can be read as the following 3x3 grid: 
 
-| . | . | . |
-| :--- | :---: | :--- |
-| W | U | U | 
-| W | S | C | 
-| W | C | C | 
+<img src="matrix.PNG">
 
 The letters represent: 
 
-| Letter | Represents | Description | 
-| :--- | :---: | :--- |
-| W | "wall" | represents the edge of the platform | 
-| U | "unknown" | represents the tiles surrounding the agent that have yet to be explored | 
-| S | "smell" | represents the tiles in which the agent observes a stench | 
-| C | "clear" | a tile the agent has explored but contained no precepts | 
-| B | "breeze" | represents the tiles in which the agent observes a breeze | 
-| F | "fell" | represents a section of the map in which the agent has fallen into a pit and died | 
-| M | "mauled" | represents a section of the map in which the agent has walked into a golem and died |
-| K | "killed" | represents a section of the map in which the agent has killed a golem |
+<img src="stringRep.PNG">
 
+The values of each key is a list of tuples that represent the differnt actions that was taken on that matrix, the current reward it produced and the total reward after that action was taken (for the "previous" memory): 
+
+`W U U W S C W C C
+    (f:-10000:-10000)
+    (B:-100:-2100.0)` 
+    
+Here the "f" indicates that the agent had fallen once and received -10000 points and that they had felt a breeze several times in the previous attempts and 5 times during the current attempt. 
 
 ## Evaluations
 To evaluate the performace of our agent we used a combination of qualitative and quantitative metrics. 
