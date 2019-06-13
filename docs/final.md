@@ -50,19 +50,53 @@ In addition to a "current" memory, an agent, if they have already had a chance t
 
 This "previous" memory is also a Q-Table of 3x3 grids of the map that the agent has already explored (cummulative - for all attempts) that consolidates all previous attempt's data. 
 
-Although an agent is influenced by their "previous" memories they are mostly influenced by their "current" memory. "Previous" memory is mainly used for discouraging an agent to make fatal decisions (any kind of decision that will cause them to die). This knowledge of fatal mistakes assists the agent in surviving long enough for them to find a new fatal step or for them to find the gold. 
+Although an agent is influenced by their "previous" memories they are mostly influenced by their "current" memory. "Previous" memory is mainly used for discouraging an agent to make fatal decisions (any kind of decision that will cause them to die). This knowledge of fatal mistakes assists the agent to be better adapt to their environment. 
 
 The influence of the "previous" memories is determiend by an siFactor in our code that ranges between 0 and 1 (can be changed manually). If the siFactor is at 1, the "previous" memory is the main memory that the agent uses to make decisions. If the siFactor is at 0 then the "current" memory is the main memory that the agent utilizes. Our project uses an siFactor of 0.2 so that only fatal actions from "previous" memory is accounted for when calculating the expected rewards of a certain action that an agent must take.  
 
 ## Evaluations
-
-
+To evaluate the performace of our agent we used a combination of qualitative and quantitative metrics. 
 
 ### Quantitative: 
-The primary quantitative metrics we will use is the cummulative reward received and the success rate. The cummulative reward is calculated by simply summing up the agents rewards from all action that it took. The succes rate is the ratio of successful traversals to total attempts made. If our agent receives on average a higher cummulative reward, and achieve a greater success rate we consider that a successful implementation. 
+The primary quantitative metrics we used is the cummulative reward received and the success rate. The cummulative reward is the sum of the agent's rewards from all actions taken. The success rate is the ratio of successful traversals to total attempts made. If our agent receives on average a higher cummulative reward and achieves a greater success rate then we consider this a successful implementation. 
+
+The following are results from a single environment for both training and validation: 
+
+#### Pre-Training Quantitative Results 
+As you can see here the agent takes about 10 attempts until the agent successfully locates the gold and their success rate is at a low 10%. 
+
+| Trial#   | Result  | Reward | Steps |
+|:-------:|:-------:|:------:|:-----:|
+| Trial 1  | Fail | -10017    | 10    |
+| Trial 2  | Fail | -10001    | 15    |
+| Trial 3  | Fail | -9982    | 79    |
+| ... | ... | ...    | ..    |
+| Trial 10  | Success | 9900    | 85    |
+| Average | 10%    | -8534  | 57.9  | 
+
+To view the agent training on this specific map please watch our video at the top of this page. 
+
+For these results recall that killing a golem rewards the agent with +250 points. The rewards difference between Trial 2 and Trial 3 indicate that Trial 3 was the first time that the agent was able to kill a golem (after a couple of attempts). 
+
+Trial 10 was the agent's first successful attempt on this map. 
+
+#### Post-Training Quantitative Results 
+These results show that after a large number of training sessions with the agent they are able to locate the gold a lot quicker (with less number of steps) and with a success rate of 100% 
+
+| Trial#   | Result  | Reward | Steps |
+|:-------:|:-------:|:------:|:-----:|
+| Trial 1  | Success | 10001    | 30    |
+| Trial 2  | Success | 10155    | 15    |
+| Trial 3  | Success | 10352    | 27    |
+| Trial 4  | Success | 10000    | 18    |
+| Trial 5  | Success | 10150    | 19    |
+| Average | 100%    | 10131.6  | 21.8  | 
+
 
 ### Qualitative: 
-To verify that the project works we will begin the AI on a controlled map that will not change (training data). If the AI succeeds they will move on to randomized maps for testing and learning. Qualitatively, we will consider the difficulty of the maps our agent can successfully traverse, and how easily it can adapt to new maps. 
+The difficulty levels of the maps that the agent explored were based on the number of golems and pits that were on the map. We found that the more pits there were that were clustered together the harder it was for the agent to get past that cluster as they would first avoid the tiles with stenches or breezes then would run out of available steps before locating a way around the cluster. 
+
+To verify that the project was successful we created a controlled map that did not change for the agent to train on. Once the agent successfully completed their missions at a high average of at least 90% of the time they moved on to a new map for testing and learning. Our qualitative evaluations showed that our project is successful because after quite a bit of training the agent is able to adapt quicker to new maps by associating the different percepts to certain rewards. 
 
 Our mooonshot case is to create an agent that stops dying and is always able to retrieve the gold for every map. 
 
