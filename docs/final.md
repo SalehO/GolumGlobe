@@ -33,7 +33,7 @@ The agent is rewarded (+) or penalized(-) for the following actions
 | + 250 | - Kill a monster | 
 | -20 | - Swing the sword and miss 
 | -1000| - Killed (fell into a pit, killed by a monster, reached maximum number of allowed steps) | 
-| +1000 | - Gold has been located (agent is standing on the tile of gold and can see the glitter) 
+| +1000 | - Gold has been located (agent is standing on the tile of gold and can see the glitter) |
 
 For every step that an agent takes, be it to an explored tile or to a new tile, they are awarded with -2 points. Every new tile that an agent explores however awards the agent with +3 points. So on an agent's very first attempt on a map every step that leads them to explore a new tile awards them with (+3) + (-2) = +1 point. This encourages an agent to explore the environment. This is especially helpful if the agent has explored most of the tiles on the 10x10 grid and have yet to locate the gold. The agent is encouraged to explore the unexplored areas in hopes of locating the gold. 
 
@@ -44,6 +44,12 @@ In addition to losing points on a tile with a stench the agent is forced to make
 If the agent dies for any reason (it fell into a pit, it is killed by a monster, or it reaches its maximum number of allowed steps) it receives -1000 points every time it dies. 
 
 Once the agent locates the gold (is standing on a block of gold) they receive +1000 points for completing their mission. 
+
+### Q-Table Reinforced Learning 
+Throughout their missions an agent will always have a "current" memory that retains all observations and actions of the agent as well as the respective rewards. This "current" memory is a Q-Table of 3x3 grids of the map that the agent has already explored containing the observations the agent has made, the actions they have taken, and the respective rewards that they received from each tile. 
+
+Illustrative view of a Q-Table from "current" memory: 
+| <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid.PNG"> | <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_shifted_once.PNG"> |  <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_shifted_twice.PNG">  | 
 
 ### Example of how Q-Table Reinforced Learning is used in Golem Globe 
 
