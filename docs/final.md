@@ -55,7 +55,7 @@ Below is an illustrative view of the "current" memory an agent would have stored
 
 <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_shifted_once.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_shifted_twice.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_down.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_down_shifted.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_down_shifted_again.PNG">
 
-![](https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_down_shifted_again.PNG)
+![SOME TEXT]({{site.url}}{{site.baseurl}}/blob/master/docs/3x3_grid_down_shifted_again.PNG)
 
 In addition to a "current" memory, an agent, if they have already had a chance to explore their environment (and failed or succeeded), also retains a "previous" memory that stores the "current" memory from all of their previous explorations. 
 
