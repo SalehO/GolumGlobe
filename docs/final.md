@@ -54,6 +54,26 @@ Although an agent is influenced by their "previous" memories they are mostly inf
 
 The influence of the "previous" memories is determiend by an siFactor in our code that ranges between 0 and 1 (can be changed manually). If the siFactor is at 1, the "previous" memory is the main memory that the agent uses to make decisions. If the siFactor is at 0 then the "current" memory is the main memory that the agent utilizes. Our project uses an siFactor of 0.2 so that only fatal actions from "previous" memory is accounted for when calculating the expected rewards of a certain action that an agent must take.  
 
+Below is an example of how we are storing our Q-Tables on file. All Q-Tables are stored as dictionaries with the keys as a string representation of each 3x3 grids that the agent has observed:
+
+`W U U W S C W C C`
+
+This string can be read as the following 3x3 grid: 
+| W | U | U | 
+| W | S | C | 
+| W | C | C | 
+
+The letters represent: 
+| Letter | Represents | Description | 
+| :--- | :---: | :--- |
+| W | "wall" | represents the edge of the platform | 
+| U | "unknown" | represents the tiles surrounding the agent that have yet to be explored | 
+| S | "smell" | represents the tiles in which the agent observes a stench | 
+| C | "clear" | a tile the agent has explored but contained no precepts | 
+| B | "breeze" | represents the tiles in which the agent observes a breeze | 
+| F | "fell" | represents a section of the map in which the agent has fallen into a pit and died | 
+
+
 ## Evaluations
 To evaluate the performace of our agent we used a combination of qualitative and quantitative metrics. 
 
@@ -65,7 +85,7 @@ The following are results from a single environment for both training and valida
 #### Pre-Training Quantitative Results 
 As you can see here the agent takes about 10 attempts until the agent successfully locates the gold and their success rate is at a low 10%. 
 
-<img src="final_training_table.PNG"> 
+<img src="final_training_arrows.PNG"> 
 
 To view the agent training on this specific map please watch our video at the top of this page. 
 
