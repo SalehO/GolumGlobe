@@ -19,17 +19,20 @@ class ObservationCollection:
         if obs_string=="":
             for i in range(GRID_SIZE * GRID_SIZE): self._add_observation("Unknown")
         else:
-            toParse = obs_string.strip().split(delimeter)
+            toParse = obs_string.split(delimeter)
             #print(toParse)
             if len(toParse) == (GRID_SIZE * GRID_SIZE):
                 for each_obs in toParse:
                     self._add_observation(each_obs)
             else:
-                raise AttributeError("expected size {}, got {}".format(GRID_SIZE * GRID_SIZE,len(toParse)))
+                if len(toParse) != (GRID_SIZE * GRID_SIZE):
+                    toParse = ["W"] * (GRID_SIZE * GRID_SIZE)
+                for each_obs in toParse:
+                    self._add_observation(each_obs)
     def __repr__(self):
         toReturn = ""
         for each_obs in self.observations:
-            toReturn += str(each_obs)
+            toReturn += str(each_obs) +" "
         return toReturn
 
     def get_valid_actions(self,all_action_short_strs):

@@ -8,8 +8,16 @@ class Memory:
         self.isEmpty = True
         
     def add(self,collection,action,reward,final_reward=0):
-        self.previous_history[str(collection)].append(Reward(action,reward,final_reward))
-        self.isEmpty = False
+        try:
+            self.previous_history[str(collection)].append(Reward(action,reward,final_reward))
+            self.isEmpty = False
+        except:
+            pass
+
+    def mergeMemory(self,memory):
+        for key in memory.previous_history:
+            for each_val in memory.previous_history[key]:
+                self.previous_history.append(each_val)
         
     def hasEncounteredScenario(self,collection):
         #print(str(collection))
@@ -88,3 +96,44 @@ class Memory:
             for act in self.previous_history[obs_str]:
                 toReturn += "\t" + str(act) + "\n"
         return toReturn
+
+    def saveMemory(self, path):
+        file = open(path,"a+")
+        file.write(self.__repr__())
+        file.close()
+
+    def loadMemory(self, path):
+        with open(path) as file:
+            obsCollection = None
+            for line in file.readlines():
+                if line[0] == "\t":
+                    actReward = line.replace("\t","").replace("(","").replace(")","").split(":")
+
+                    actStr = actions_map[actReward[0]]
+                    action = Action(actStr)
+                    shortTermReward = float(actReward[1])
+                    longTermReward = float(actReward[2])
+
+                    self.add(obsCollection,action,shortTermReward,longTermReward)
+                    
+                else:
+                    obsString = line.replace(":","").strip()
+                    obsCollection = ObservationCollection(obsString)
+                    
+    def getVals(self):
+        for collection in self.previous_history.keys():
+            c = ObservationCollection(collection)
+            needToPrint = False
+            theMax = self.get_max_final_rewards(c)
+            for (k,v) in sorted(self.get_avg_reward_vals(c).items(),key = lambda x: x[1]):
+                if v < -1000:
+                    print("{}: {}: {} {}\n".format(c,k,v,theMax[k]))
+                else:
+                    continue
+
+
+if __name__ == "__main__":
+    m = Memory()
+    m.loadMemory("C:\\Users\\wills\\Desktop\\CS_175\\cummulativeMemory.txt")
+    m.getVals()
+        

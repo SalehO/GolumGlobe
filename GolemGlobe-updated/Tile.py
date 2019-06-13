@@ -41,11 +41,20 @@ class Tile:
     def isExit(self):
         return self.type == "EXIT"
 
+    def isGolem(self):
+        return self.type == "GOLEM"
+    
+    def isPit(self):
+        return self.type == "PIT"
+
+    def isTreasure(self):
+        return self.type == "TREASURE"
+
     def position(self):
         return (self.row,self.col)
 
     def attack(self):
-        if self.type == "GOLEM":
+        if self.type == "GOLEM" or self.type == "G":
             self.updateTileType("CLEAR")
             return True
         else:

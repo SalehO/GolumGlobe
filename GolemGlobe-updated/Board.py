@@ -9,6 +9,7 @@ class Board:
         self.cols = 0
 
         self.board = []
+        self.golemIndexes = []
 
         self.numberOfGolems = 1
         self.numberOfPits = 1
@@ -35,7 +36,10 @@ class Board:
         self.cols = cols
 
         for index in range(self.rows * self.cols):
-            self.board.append(Tile(index//self.rows,index%self.rows,tile_type = getTileTypeFromStrig(board_as_list_of_strings[index])))
+            newTile = Tile(index//self.rows,index%self.rows,tile_type = getTileTypeFromStrig(board_as_list_of_strings[index]))
+            self.board.append(newTile)
+            if newTile.isGolem():
+                self.golemIndexes.append(index)
         self.isInitalized = True
         self.initalizePosition()
 
@@ -199,7 +203,7 @@ class Board:
 
         obs_type = list(set(obs_type))
 
-        if obs_type == [""]:
+        if obs_type == [""] and not self.board[index].isPit():
             obs_type = ["Clear"]
 
         if successfulAttack:

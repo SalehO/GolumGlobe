@@ -1,5 +1,7 @@
 observations = ["Smell","Breeze","Glitter","Fell","Killed","Clear","Unknown","Wall"]
 
+
+
 class Observation:
     def __init__(self,row_num,col_num,index,obs_type=["Unknown"]):
         self.obs = obs_type

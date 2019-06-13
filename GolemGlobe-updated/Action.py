@@ -18,6 +18,9 @@ class Action:
     def is_attack(self):
         return "attack" in self.action
 
+    def is_move(self):
+        return "move" in self.action
+
     def take_action(self,orientation,index,num_rows,num_cols):
         #return tuple containning new index and where attacked
         movedTo = index

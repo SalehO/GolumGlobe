@@ -11,17 +11,56 @@ class Observation:
         self.observation_type = set()
         self._construct_obs_type(obs_type)
 
+    def showObs(self):
+        return self.isSmell() or self.isBreeze() or self.isGoldOnTile()
+
+    def obsString(self):
+        toReturn = "You "
+        hasSomething = False
+        hasSomething2 = False
+        if self.isGoldOnTile():
+            toReturn += "see something glitter at your feet"
+            hasSomething = True
+
+        if self.isSmell():
+            if hasSomething:
+               toReturn += "and smell something funky"
+               hasSomething2 = True
+            else:
+                toReturn += "smell something funky"
+                hasSomething = True
+
+        if self.isBreeze():
+            if hasSomething2 or hasSomething:
+                toReturn += "and feel a breeze."
+            else:
+                toReturn += "feel a breeze."
+
+        return toReturn
+            
     def isUnknown(self):
         return "Unknown" in self.observation_type
 
     def isWall(self):
         return "Wall" in self.observation_type
+    
+    def isFall(self):
+        return "Fell" in self.observation_type
 
     def isAgentDead(self):
         return "Mauled" in self.observation_type or "Fell" in self.observation_type
 
     def isGoldOnTile(self):
         return "Glitter" in self.observation_type
+
+    def isSmell(self):
+        return "Smell" in self.observation_type
+
+    def isBreeze(self):
+        return "Breeze" in self.observation_type
+
+    def isMauled(self):
+        return "Mauled" in self.observation_type
 
     def _construct_obs_type(self,obs_type):
         if type(obs_type) == str:

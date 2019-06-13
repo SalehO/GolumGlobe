@@ -26,6 +26,8 @@ import os
 import sys
 import time
 import json
+from Tile import *
+from Board import *
 
 if sys.version_info[0] == 2:
     sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)  # flush print output immediately
@@ -35,7 +37,47 @@ else:
 
 # More interesting generator string: "3;7,44*49,73,35:1,159:4,95:13,35:13,159:11,95:10,159:14,159:6,35:6,95:6;12;"
 
-missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+def _convertIndexToXZ(index,rows,cols):
+    z = index%cols + 1
+    x = abs(rows - index//cols -1)
+    return (x,z)
+
+def generateXMLFromBoard(board):
+    input_xml = ""
+    index = 0
+    for eachTile in board.board:
+        (x,z) = _convertIndexToXZ(index,board.rows,board.cols)
+        if eachTile.isGolem():
+            input_xml+= "<DrawEntity x= "+ "\"" +str(x+0.5)+"\""+ " y=\"19\" z="+ "\""+str(z+0.5)+"\""+" type=\"Zombie\" />\n"#uncomment to spawn zombie
+            input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"17\" z= " +"\""+ str(z)+"\"" +" type=\"redstone_block\" />\n"
+        elif eachTile.isPit():
+            input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"17\" z= " +"\""+ str(z)+"\"" +" type=\"air\" />\n"
+        elif eachTile.isTreasure():
+              input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"17\" z= " +"\""+ str(z)+"\"" +" type=\"air\" />\n"
+              input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"17\" z= " +"\""+ str(z)+"\"" +" type=\"gold_block\" />\n"
+        elif eachTile.isExit():
+            input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"17\" z= " +"\""+ str(z)+"\"" +" type=\"emerald_block\" />\n"     
+        else:
+            #print("here",x,z)
+            input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"17\" z= " +"\""+ str(z)+"\"" +" type=\"lapis_block\" />\n"
+        index += 1    
+    return mapXML(input_xml,clearStructures(board.rows,board.cols,17,True))
+
+def clearStructures(number_row,num_cols,y,toHeight=False):
+    toClear = ""
+    maxY = y
+    if toHeight:  
+        starty = 1
+    else:
+        starty = y
+    for y in range(starty,maxY+1):
+        for index in range(number_row*num_cols):
+            (x,z) = _convertIndexToXZ(index,number_row,num_cols)
+            toClear += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\""+str(y)+"\" z= " +"\""+ str(z)+"\"" +" type=\"air\" />\n"
+    return toClear
+
+def mapXML(input_xml,clear_xml):
+    return '''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
             <Mission xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             
               <About>
@@ -51,217 +93,8 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                 <ServerHandlers>
                   <FlatWorldGenerator generatorString="3;5*1,35:15;1;village(size=10)"/>
                   <DrawingDecorator>
-                      <DrawBlock x="0" y="7" z="1" type="air"/>
-                      <DrawBlock x="1" y="7" z="1" type="air"/>
-                      <DrawBlock x="2" y="7" z="1" type="air"/>
-                      <DrawBlock x="3" y="7" z="1" type="air"/>
-                      <DrawBlock x="4" y="7" z="1" type="air"/>
-                      <DrawBlock x="5" y="7" z="1" type="air"/>
-                      <DrawBlock x="6" y="7" z="1" type="air"/>
-                      <DrawBlock x="7" y="7" z="1" type="air"/>
-                      <DrawBlock x="8" y="7" z="1" type="air"/>
-                      <DrawBlock x="9" y="7" z="1" type="air"/>
-                      <DrawBlock x="0" y="7" z="2" type="air"/>
-                      <DrawBlock x="1" y="7" z="2" type="air"/>
-                      <DrawBlock x="2" y="7" z="2" type="air"/>
-                      <DrawBlock x="3" y="7" z="2" type="air"/>
-                      <DrawBlock x="4" y="7" z="2" type="air"/>
-                      <DrawBlock x="5" y="7" z="2" type="air"/>
-                      <DrawBlock x="6" y="7" z="2" type="air"/>
-                      <DrawBlock x="7" y="7" z="2" type="air"/>
-                      <DrawBlock x="8" y="7" z="2" type="air"/>
-                      <DrawBlock x="9" y="7" z="2" type="air"/> 
-                      <DrawBlock x="0" y="7" z="3" type="air"/>
-                      <DrawBlock x="1" y="7" z="3" type="air"/>
-                      <DrawBlock x="2" y="7" z="3" type="air"/>
-                      <DrawBlock x="3" y="7" z="3" type="air"/>
-                      <DrawBlock x="4" y="7" z="3" type="air"/>
-                      <DrawBlock x="5" y="7" z="3" type="air"/>
-                      <DrawBlock x="6" y="7" z="3" type="air"/>
-                      <DrawBlock x="7" y="7" z="3" type="air"/>
-                      <DrawBlock x="8" y="7" z="3" type="air"/>
-                      <DrawBlock x="9" y="7" z="3" type="air"/>
-                      <DrawBlock x="0" y="7" z="4" type="air"/>
-                      <DrawBlock x="1" y="7" z="4" type="air"/>
-                      <DrawBlock x="2" y="7" z="4" type="air"/>
-                      <DrawBlock x="3" y="7" z="4" type="air"/>
-                      <DrawBlock x="4" y="7" z="4" type="air"/>
-                      <DrawBlock x="5" y="7" z="4" type="air"/>
-                      <DrawBlock x="6" y="7" z="4" type="air"/>
-                      <DrawBlock x="7" y="7" z="4" type="air"/>
-                      <DrawBlock x="8" y="7" z="4" type="air"/>
-                      <DrawBlock x="9" y="7" z="4" type="air"/>
-                      <DrawBlock x="0" y="7" z="5" type="air"/>
-                      <DrawBlock x="1" y="7" z="5" type="air"/>
-                      <DrawBlock x="2" y="7" z="5" type="air"/>
-                      <DrawBlock x="3" y="7" z="5" type="air"/>
-                      <DrawBlock x="4" y="7" z="5" type="air"/>
-                      <DrawBlock x="5" y="7" z="5" type="air"/>
-                      <DrawBlock x="6" y="7" z="5" type="air"/>
-                      <DrawBlock x="7" y="7" z="5" type="air"/>
-                      <DrawBlock x="8" y="7" z="5" type="air"/>
-                      <DrawBlock x="9" y="7" z="5" type="air"/>
-                      <DrawBlock x="0" y="7" z="6" type="air"/>
-                      <DrawBlock x="1" y="7" z="6" type="air"/>
-                      <DrawBlock x="2" y="7" z="6" type="air"/>
-                      <DrawBlock x="3" y="7" z="6" type="air"/>
-                      <DrawBlock x="4" y="7" z="6" type="air"/>
-                      <DrawBlock x="5" y="7" z="6" type="air"/>
-                      <DrawBlock x="6" y="7" z="6" type="air"/>
-                      <DrawBlock x="7" y="7" z="6" type="air"/>
-                      <DrawBlock x="8" y="7" z="6" type="air"/>
-                      <DrawBlock x="9" y="7" z="6" type="air"/>
-  
-                      <DrawBlock x="0" y="7" z="7" type="air"/>
-                      <DrawBlock x="1" y="7" z="7" type="air"/>
-                      <DrawBlock x="2" y="7" z="7" type="air"/>
-                      <DrawBlock x="3" y="7" z="7" type="air"/>
-                      <DrawBlock x="4" y="7" z="7" type="air"/>
-                      <DrawBlock x="5" y="7" z="7" type="air"/>
-                      <DrawBlock x="6" y="7" z="7" type="air"/>
-                      <DrawBlock x="7" y="7" z="7" type="air"/>
-                      <DrawBlock x="8" y="7" z="7" type="air"/>
-                      <DrawBlock x="9" y="7" z="7" type="air"/>
-                      <DrawBlock x="0" y="7" z="8" type="air"/>
-                      <DrawBlock x="1" y="7" z="8" type="air"/>
-                      <DrawBlock x="2" y="7" z="8" type="air"/>
-                      <DrawBlock x="3" y="7" z="8" type="air"/>
-                      <DrawBlock x="4" y="7" z="8" type="air"/>
-                      <DrawBlock x="5" y="7" z="8" type="air"/>
-                      <DrawBlock x="6" y="7" z="8" type="air"/>
-                      <DrawBlock x="7" y="7" z="8" type="air"/>
-                      <DrawBlock x="8" y="7" z="8" type="air"/>
-                      <DrawBlock x="9" y="7" z="8" type="air"/>
-                      <DrawBlock x="0" y="7" z="9" type="air"/>
-                      <DrawBlock x="1" y="7" z="9" type="air"/>
-                      <DrawBlock x="2" y="7" z="9" type="air"/>
-                      <DrawBlock x="3" y="7" z="9" type="air"/>
-                      <DrawBlock x="4" y="7" z="9" type="air"/>
-                      <DrawBlock x="5" y="7" z="9" type="air"/>
-                      <DrawBlock x="6" y="7" z="9" type="air"/>
-                      <DrawBlock x="7" y="7" z="9" type="air"/>
-                      <DrawBlock x="8" y="7" z="9" type="air"/>
-                      <DrawBlock x="9" y="7" z="9" type="air"/>
-                      <DrawBlock x="0" y="7" z="10" type="air"/>
-                      <DrawBlock x="1" y="7" z="10" type="air"/>
-                      <DrawBlock x="2" y="7" z="10" type="air"/>
-                      <DrawBlock x="3" y="7" z="10" type="air"/>
-                      <DrawBlock x="4" y="7" z="10" type="air"/>
-                      <DrawBlock x="5" y="7" z="10" type="air"/>
-                      <DrawBlock x="6" y="7" z="10" type="air"/>
-                      <DrawBlock x="7" y="7" z="10" type="air"/>
-                      <DrawBlock x="8" y="7" z="10" type="air"/>
-                      <DrawBlock x="9" y="7" z="10" type="air"/>
-                      
-                      <DrawBlock x="3" y="7" z="4" type="air"/>
-                      <DrawBlock x="3" y="6" z="4" type="diamond_block"/>
-                      <DrawEntity x="3.5"  y="9" z="4.5" type="Creeper" />
-                      
-                      <DrawBlock x="1" y="6" z="9" type="air"/>
-                      <DrawBlock x="0" y="8" z="1" type="emerald_block"/>
-                      <DrawBlock x="1" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="1" type="diamond_block"/>
-                      <DrawBlock x="0" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="2" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="2" type="diamond_block"/> 
-                      <DrawBlock x="0" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="3" type="diamond_block"/>
-                      <DrawBlock x="0" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="4" type="diamond_block"/>
-                      <DrawBlock x="0" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="5" type="diamond_block"/>
-                      <DrawBlock x="0" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="6" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="6" type="diamond_block"/>
-  
-                      <DrawBlock x="0" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="7" type="air"/>
-                      <DrawBlock x="4" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="7" type="diamond_block"/>
-                      <DrawBlock x="0" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="8" type="gold_block"/>
-                      <DrawItem x="4" y="9" z="8" type="gold_nugget"/>
-                      <DrawBlock x="5" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="8" type="diamond_block"/>
-                      <DrawBlock x="0" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="9" type="air"/>
-                      <DrawBlock x="2" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="9" type="diamond_block"/>
-                      <DrawBlock x="0" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="1" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="2" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="3" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="4" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="5" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="6" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="7" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="8" y="8" z="10" type="diamond_block"/>
-                      <DrawBlock x="9" y="8" z="10" type="diamond_block"/>
-                      
+                      '''+"""{}\n{}""".format(clear_xml,input_xml)+'''
                   </DrawingDecorator>
-                  <ServerQuitFromTimeUp timeLimitMs="30000"/>
                   <ServerQuitWhenAnyAgentFinishes/>
                 </ServerHandlers>
               </ServerSection>
@@ -269,18 +102,12 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
               <AgentSection mode="Creative">
                 <Name>GolumGlobe</Name>
                 <AgentStart>
-                    <Placement x="0.5" y="9.0" z="1.5" yaw="0"/>
-                    <Inventory>
-                        <InventoryItem slot="0" type = "diamond_sword"/>
-                    </Inventory>
+                    <Placement x="0.5" y="18.0" z="1.5" yaw="0"/>
                 </AgentStart>
                 <AgentHandlers>
+                  <ChatCommands/>
                   <ObservationFromFullStats/>
-                  
-                  <ContinuousMovementCommands turnSpeedDegs="360"/>
-                  <AbsoluteMovementCommands/>
+                  <ContinuousMovementCommands turnSpeedDegs="400"/>
                 </AgentHandlers>
               </AgentSection>
             </Mission>'''
-
-

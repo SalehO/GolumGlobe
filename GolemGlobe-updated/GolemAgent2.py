@@ -24,6 +24,9 @@ class GolemAgent:
 
         self.stats = Stats()
 
+        self.hasFallenIndexes = []
+        self.killedGolemAtIndex = []
+
 
         self.cummulativeReward = 0
 
@@ -37,8 +40,10 @@ class GolemAgent:
         self.currentActionHistory = ActionHistory()
 
         self.gamma = 0.2
-        self.siFactor = 0.5
-        self.randomness = 0.5
+        self.siFactor = 0.2
+        self.randomness = 0.35
+        self.risk = 0.75
+        self.exploration = 1.0
 
         self._fill_map(map_size_cols,map_size_rows)
 
@@ -119,8 +124,10 @@ class GolemAgent:
 
                     val = 0
 
-                    if i in expected_actions_from_current_memory.keys(): rewardFromCurrent = expected_actions_from_current_memory[i]
-                    if i in expected_actions_from_previous_memory.keys(): rewardFromPast = expected_actions_from_previous_memory[i]
+                    if i in expected_actions_from_current_memory.keys(): rewardFromCurrent = expected_actions_from_current_memory[i] * 0.5
+                    if i in expected_actions_from_previous_memory.keys(): rewardFromPast = expected_actions_from_previous_memory[i] * 0.5
+                    #if i in expected_actions_from_current_memory.keys(): rewardFromCurrent = expected_actions_from_current_memory[i]
+                    #if i in expected_actions_from_previous_memory.keys(): rewardFromPast = expected_actions_from_previous_memory[i]
 
                     if rewardFromCurrent == 0 or rewardFromPast == 0:
                         val = rewardFromCurrent + rewardFromPast
@@ -154,7 +161,7 @@ class GolemAgent:
 
     def getDistanceWeightIndex(self,index):
         totalDistance = self.getDistanceBetweenIndexAndAllUnknown(index)
-        return (self.totalTiles/(len(self.currentUnknownIndexes) + 1))*(totalDistance/(self.num_rows*self.num_cols))
+        return ((self.totalTiles/(len(self.currentUnknownIndexes) + 1))*((self.num_rows*self.num_cols)/(totalDistance + 1)))
 
     def constructObservationCollection(self,index):
         mapIndex = self.indexToCurrentMapIndex(index)
@@ -169,8 +176,9 @@ class GolemAgent:
                self.currentMapObservations[mapIndex - 1],#2 on numpad
                self.currentMapObservations[mapIndex +(self.num_cols+2) - 1]#3 on numpad
                ]
-        #print(obs)
-        str_rep_of_obs = " ".join(list(map(lambda x: str(x),obs))).strip()
+        to_str = []
+        str_rep_of_obs = " ".join(list(map(lambda x: str(x),obs)))
+        print(str_rep_of_obs)
         return ObservationCollection(str_rep_of_obs)
 
     def updateObservationAtIndex(self,index,obs):
@@ -186,11 +194,15 @@ class GolemAgent:
         allMoves = actions_map.keys()
         obs_collection = self.constructObservationCollection(self.currentIndex)
         return obs_collection.get_valid_actions(allMoves)
+
+    def obsAtIndex(self,index):
+        return self.currentMapObservations[self.indexToCurrentMapIndex(self.currentIndex)]
         
     def selectAction(self):
         validMoves = self._get_valid_actions()
 
         expected_rewards = self.expectedRewardForAction()
+        print("Current obs: {}".format(self.obsAtIndex(self.currentIndex)))
 
         expected_rewards_for_valid_moves = {}
         for eachMove in validMoves:
@@ -203,15 +215,79 @@ class GolemAgent:
             (newIndex,newAttack) = action.take_action(self.orientation,self.currentIndex,self.num_rows,self.num_cols) #simply finding index
             if self.isUnknown(newIndex) or (newAttack != -1 and self.isUnknown(newIndex)):
                 guessForReward += 2
+
+            #handle golem
+            if self.obsAtIndex(self.currentIndex).isSmell():
+                if self.isUnknown(newAttack):
+                    if action.is_move():
+                        guessForReward -= 150
+                    else:
+                        guessForReward += 150
             else:
-                guessForReward -= 120
+                if not action.is_move(): #penalty for hitting wildly
+                    guessForReward -= 500
+
+            #handle pit:
+            if self.obsAtIndex(self.currentIndex).isBreeze():
+                if action.is_move():
+                    if newIndex in self.hasFallenIndexes:
+                        guessForReward = -10000 #don't fall in same pit
+                    elif self.isUnknown(newIndex):
+                        #guessForReward = -100
+                        guessForReward += 0
+                    #else:
+                    #   guessForReward -= self.getDistanceWeightIndex(newIndex) #may only attack now?
 
             if action.is_move():
-                 guessForReward -= self.getDistanceWeightIndex(newIndex) #may only attack now?
+                if self.isUnknown(newIndex):
+                    if not self.obsAtIndex(self.currentIndex).isBreeze() and not self.obsAtIndex(self.currentIndex).isSmell():
+                        guessForReward += (self.num_rows*self.num_cols)/(len(self.currentUnknownIndexes) + 1 * 1.0) * self.exploration
+                #else:
+                guessForReward += self.getDistanceWeightIndex(newIndex)
+            else:
+                if self.obsAtIndex(newAttack).isMauled():
+                    guessForReward += 1000
+                
             expected_rewards_for_valid_moves.update({eachMove: guessForReward})
-
         #print(expected_rewards_for_valid_moves)
+        #b = input()
 
+        bestActions = []
+        bestActionVal = 0
+        goodActions = []
+        badActions = []
+        terribleActions = []
+
+        for (k,v) in sorted(expected_rewards_for_valid_moves.items(),key = lambda x: x[1], reverse = True):
+            if len(bestActions) == 0:
+                bestActionVal = v
+                bestActions.append(k)
+            elif v == bestActionVal:
+                bestActions.append(k)
+            elif v > 0:
+                goodActions.append(k)
+            elif v >= -500:
+                badActions.append(k)
+            else:
+                terribleActions.append(k)
+
+
+        if random.random() > self.randomness:
+            act_str = random.choice(bestActions)
+        else:
+            positiveChoices = bestActions + goodActions
+            if random.random() > self.randomness:
+                act_str = random.choice(positiveChoices)
+            else:
+                notTerrible = positiveChoices + badActions
+                if random.random() > self.risk:
+                    act_str = random.choice(notTerrible)
+                else:
+                    allChoices = notTerrible + terribleActions
+                    act_str = random.choice(allChoices)
+
+        return Action(actions_map[act_str])
+        """
         #find best guess:
         maxGuessReward = 0
         maxActions = []
@@ -236,11 +312,14 @@ class GolemAgent:
 
         #print(actions_map[act_str])
         return Action(actions_map[act_str])
-            
+        """    
 
     def update(self,newObs,obs_index,resetWhenNeeded=True):
         #calculate reward:
         exploredNewTile = self.updateObservationAtIndex(obs_index,newObs)
+
+        if newObs.isFall():
+            self.hasFallenIndexes.append(obs_index)
         #print(newObs)
 
         lastRewardVal = 0
@@ -256,8 +335,7 @@ class GolemAgent:
                 if exploredNewTile:
                     lastRewardVal += 3
                     if self.lastAction.is_attack(): #attacked tile hadn't observed yet
-                        if "Kill" in self.currentMapObservations[self.indexToCurrentMapIndex(obs_index)].observation_type:
-                            
+                        if "Killed" in self.currentMapObservations[self.indexToCurrentMapIndex(obs_index)].observation_type:
                             lastRewardVal += 250
                         else:
                             lastRewardVal -= 20
@@ -337,28 +415,3 @@ class GolemAgent:
         self.previousActions = []
         self.rewardForAction = []
         
-        
-##m = Memory()
-##m.add(ObservationCollection(),"f",10,14)
-###print(str(m.previous_history))
-##g = GolemAgent(10,10,90,m)
-##g.constructObservationCollection(90).print_observations()
-###print(g.currentMapObservations)
-###print(len(g.currentMapObservations))
-###g.expectedRewardForAction()
-##print(g.selectAction())
-##print(g.selectAction())
-##print(g.selectAction())
-##g.constructObservationCollection(0).print_observations()
-#g.currentMapObservations[0].update("U")
-#for i in range(100):
-#    x = g.indexToCurrentMapIndex(i)
-#    y = g.currentMapIndexToIndex(x)
-#    print("{} {} {}".format(i,x,y))
-
-
-#to make action:
-#   -call perform action
-#   -get observation from map
-#   -pass it to update
-#   -reset if necessary
