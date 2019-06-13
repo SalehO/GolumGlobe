@@ -1,1 +1,1 @@
-This directory contains cached maps that can be loaded in.
+This directory contains a few sample maps that can be used by the GolemGlobe program.
