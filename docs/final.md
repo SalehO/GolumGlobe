@@ -10,11 +10,15 @@ Welcome to Golem Globe where we trained a Minecraft agent how to play our own va
 Golem Globe, inspired by Wumpus World, is an environment in which a Minecraft agent must traverse through a platform that contains a single block of gold, multiple pits, and multiple monsters. The goal of this project was to create a Minecraft AI that can navigate through a platform of pits and monsters to locate the treasure/gold without falling into a pit or being killed by a monster during its journey. To survive, the agent must make observations of their immediate surroundings and decide which direction will be most rewarding (or least dangerous) for them. If the agent smells a stench it is an indication that they are beside a monster; a breeze indicates that the agent is beside a pit; the sparkles of glitter indicate that the agent has found the gold and have completed their mission. These percepts will help the agent navigate through the platforms. For more information regarding the rules of Golem Globe and a more in-depth explanation of the game please vist our [Home Page](https://soberanc.github.io/GolemGlobe/). 
 
 ## Approaches 
-To train our agent we incorporated reinforcement learning through Q-Tables in which the agent will record their observations made on a given map as they explore that map in search of the gold. 
+To train our agent we incorporated reinforcement learning through Q-Tables in which the agent will record their observations made on a given map as they explore that map in search of the gold. An agent at all times has their "current" memory, which has stored in it the observations and resulting rewards of their current run. If an agent has already been trained on an environment then the agent will not only have their "current" memory but also their "previous" memory to help them make decisions regarding their traversals. 
 
-To start, the agent was trained on a static map with only one pit and one monster. As the agent explores their environment in search of the gold they are rewarded for successful traversals and penalized for dying (either from falling into a pit or being killed by a monster). During a traversal, the agent stores in memory all previous observations it made and associates them with a respective reward. When the agent is done traversing (either by finding the gold or from dying) it maps all the previous actions it made to the total rewards received and to the Q-Table. We created our agent to prioritize the long-term reward, and added some randomness so that it would have a chance to explore new unexplored blocks and encounter more scenarios. 
+To start, the agent was trained on a single map that does not change with only one pit and one monster. As the agent explores their environment in search of the gold they are rewarded for accomplishing their mission (locating the gold) and penalized for dying (either from falling into a pit or being killed by a monster). 
 
-By running the agent on the same map and recording the results of previous attempts, the agent begins to associate the observations it made with the reward that it was given, and thus learns which actions to undertake to maximize the reward. 
+During a traversal, an agent is penalized or rewarded based on the actions they take and the observations that they make. These actions and observations, along with the respective reward, is stored in their "current" memory. In addition, the agent also takes note of the tiles that have already been explored. To encourage the agent to explore newer tiles the agent is rewarded some points. 
+
+When the agent is done traversing (either by finding the gold or from dying) it maps all the previous actions it made to the total rewards received and logs their "current" memory into their "previous" memory, clearing their "current" memory for their next attempt at the mission. We created our agent to prioritize the long-term reward, and added some randomness so that it would have a chance to explore new unexplored blocks and encounter more scenarios. 
+
+By running the agent on the same map and recording the results of previous attempts in "previous" memory, the agent begins to associate the observations it made with the reward that it was given, and thus learns which actions to undertake to maximize the reward. 
 
 ### Reward System 
 The agent begins with 0 points at the start of every mission. 
@@ -23,18 +27,27 @@ The agent is rewarded (+) or penalized(-) for the following actions
 
 | _ +/- Points _ |  Action _ |
 | :--- | :--- | 
-| -1000| - Killed (fell into a pit, killed by a monster, reached maximum number of allowed steps) | 
-| +1000 | - Gold has been located (agent is standing on the block of gold and can see the glitter) 
+| -2 | - Every step an agent takes | 
+| + 3 | - The agent explores a new tile | 
 | -200 | - The agent feels a breeze or smells a stench | 
+| + 250 | - Kill a monster | 
+| -20 | - Swing the sword and miss 
+| -1000| - Killed (fell into a pit, killed by a monster, reached maximum number of allowed steps) | 
+| +1000 | - Gold has been located (agent is standing on the tile of gold and can see the glitter) 
 
-### Reward System and Q-Table Reinforced Learning 
-The agent loses 1000 points everytime they fall into a pit, is killed by a monster, or reaches their maximum number of allowed steps. Whenever one of these deathly actions occur and the agent attempts the map again they retain the observations they made from their previous attempts but now they also retain the locations of the blocks that caused them to die and lose so many points. These observ
+For every step that an agent takes, be it to an explored tile or to a new tile, they are awarded with -2 points. Every new tile that an agent explores however awards the agent with +3 points. So on an agent's very first attempt on a map every step that leads them to explore a new tile awards them with (+3) + (-2) = +1 point. This encourages an agent to explore the environment. This is especially helpful if the agent has explored most of the tiles on the 10x10 grid and have yet to locate the gold. The agent is encouraged to explore the unexplored areas in hopes of locating the gold. 
 
-The agent also loses 200 points whenever they are on a block in which they observe a stench or a breeze. This discourages the agent from attempting the same blocks on their next attempt unless they have no other choice and encourages them to explore other parts of their environment. 
+If the agent steps on a tile and observes either a breeze or a stench they receive -200 points. This discourages the agent from attempting the same blocks on their next attempt due to the danger surrounding it and encourages them to explore other areas of their environment. The loss in points however still allows the agent to attempt these tiles if they find no other way around it. 
 
-Once the agent has found the gold they receive 1000 points for their completing their mission. 
+In addition to losing points on a tile with a stench the agent is forced to make a decision - they are forced to attack a monster but must decide in which direction to attack (up/forward, down/backwards, left, or right). If the agent swings its sword and misses they receive -20 points which discourages blind/uneducated attacks. If the monster is killed then the agent is awarded with 250 points. 
 
-After accomplishing their mission once, we allow the agent to attempt the same mission (the same map) until they learn how to traverse their environment without dying. 
+If the agent dies for any reason (it fell into a pit, it is killed by a monster, or it reaches its maximum number of allowed steps) it receives -1000 points every time it dies. 
+
+Once the agent locates the gold (is standing on a block of gold) they receive +1000 points for completing their mission. 
+
+### Example of how Q-Table Reinforced Learning is used in Golem Globe 
+
+
 
 ## Evaluation
 The evaluate the performance of our agent we are using a combinatino of qualitative and quantitative metrics. 
