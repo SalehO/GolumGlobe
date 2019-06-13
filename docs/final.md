@@ -49,7 +49,7 @@ Once the agent locates the gold (is standing on a block of gold) they receive +1
 ### Q-Table Reinforced Learning 
 Throughout their missions an agent will always have a "current" memory that retains all observations and actions of the agent as well as the respective rewards. This "current" memory is a Q-Table of 3x3 grids of the map that the agent has already explored containing the observations the agent has made, the actions they have taken, and the respective rewards that they received from each tile. 
 
-<img align="left" src="https://github.com/soberanc/GolemGlobe/blob/master/docs/observations_map.jpg">
+[]<img align="left" src="https://github.com/soberanc/GolemGlobe/blob/master/docs/observations_map.jpg">
 
 Below is an illustrative view of the "current" memory an agent would have stored from traversing the bottom half of the map to the left. 
 
