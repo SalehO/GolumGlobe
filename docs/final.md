@@ -79,14 +79,9 @@ The values of each key is a list of tuples that represent the differnt actions t
     
 Here the "f" indicates that the agent had fallen once and received -10000 points and that they had felt a breeze several times in the previous attempts and 5 times during the current attempt. 
 
-### Equations For Q-Learning 
-The main equation we used for our algorithm was the following to determine the expected rewards for each step that the agent could take: 
+A large contributor to our algorithm was the standard gamma equation for machine learning to find an optimal behavior. Throughout this project we attempt to find a policy that maximized the expected value of 
 
-$$
-\begin{align*}
-    & \sum_{t=0}^inf \ gamma^t r_t
-\end{align*}
-$$
+<img src="eq.PNG"> where <img src="r.PNG"> is the immediate reward in time t and <img src="range.PNG"> is the discount factor. 
 
 ### What Did Not Work 
 - In the early stages of our project we were storing the Q-Table as a dictionary in which the keys were the map indices (a single tile inthe map). We later realized that this method was not efficient nor useful as the agent was only able to learn about the current map and was not able to generalize other maps. 
