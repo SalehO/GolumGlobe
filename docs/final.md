@@ -36,11 +36,11 @@ For every step that an agent takes, be it to an explored tile or to a new tile, 
 
 If the agent steps on a tile and observes either a breeze or a stench they receive -200 points. This discourages the agent from attempting the same blocks on their next attempt due to the danger surrounding it and encourages them to explore other areas of their environment. The loss in points however still allows the agent to attempt these tiles if they find no other way around it. 
 
-In addition to losing points on a tile with a stench the agent is forced to make a decision - they are forced to attack a monster but must decide in which direction to attack (up/forward, down/backwards, left, or right). If the agent swings its sword and misses they receive -20 points which discourages blind/uneducated attacks. If the monster is killed then the agent is awarded with 250 points. 
+In addition to losing points on a tile with a stench the agent is forced to make a decision - they are forced to attack a monster but must decide in which direction to attack (up/forward, down/backwards, left, or right). If the agent swings its sword and misses they receive -20 points which discourages blind/uneducated attacks. If the monster is killed then the agent is awarded with 150 points. 
 
-If the agent dies for any reason (it fell into a pit, it is killed by a monster, or it reaches its maximum number of allowed steps) it receives -1000 points every time it dies. 
+If the agent dies for any reason (it fell into a pit, it is killed by a monster, or it reaches its maximum number of allowed steps) it receives -10000 points every time it dies. 
 
-Once the agent locates the gold (is standing on a block of gold) they receive +1000 points for completing their mission. 
+Once the agent locates the gold (is standing on a block of gold) they receive +10000 points for completing their mission. 
 
 ### Q-Table Reinforced Learning 
 Throughout their missions an agent will always have a "current" memory that retains all observations and actions of the agent as well as the respective rewards. This "current" memory is a Q-Table of 3x3 grids of the map that the agent has already explored containing the observations the agent has made, the actions they have taken, and the respective rewards that they received from each tile. 
@@ -73,11 +73,18 @@ The letters represent:
 
 The values of each key is a list of tuples that represent the differnt actions that was taken on that matrix, the current reward it produced and the total reward after that action was taken (for the "previous" memory): 
 
-`W U U W S C W C C
+`W U U W S C W C C :
     (f:-10000:-10000)
     (B:-100:-2100.0)` 
     
 Here the "f" indicates that the agent had fallen once and received -10000 points and that they had felt a breeze several times in the previous attempts and 5 times during the current attempt. 
+
+### What Did Not Work 
+- In the early stages of our project we were storing the Q-Table as a dictionary in which the keys were the map indices (a single tile inthe map). We later realized that this method was not efficient nor useful as the agent was only able to learn about the current map and was not able to generalize other maps. 
+
+- We also started out weighing all steps/actions taken equally. This method did not work as the agent would tend to repeat their steps. Because of this issue we added the reward of +3 for every new tile that the agent explored, encouraging it to gain more observations about the map and have a better generalization of its environment. 
+
+- Finally as the agent would struggle to find the gold due to the negative rewards they would receive on a tile with breezes and stenches, we increased the randomness factor to ensure that the agent would not be stuck avoiding tiles these tiles and not being able to locate a way around the pits or monsters to find the gold. 
 
 ## Evaluations
 To evaluate the performace of our agent we used a combination of qualitative and quantitative metrics. 
@@ -94,7 +101,7 @@ As you can see here the agent takes about 10 attempts until the agent successful
 
 To view the agent training on this specific map please watch our video at the top of this page. 
 
-For these results recall that killing a golem rewards the agent with +250 points. The rewards difference between Trial 2 and Trial 3 indicate that Trial 3 was the first time that the agent was able to kill a golem (after a couple of attempts). 
+For these results recall that killing a golem rewards the agent with +150 points. The rewards difference between Trial 2 and Trial 3 indicate that Trial 3 was the first time that the agent was able to kill a golem (after a couple of attempts). 
 
 Trial 10 was the agent's first successful attempt on this map. 
 
@@ -105,7 +112,7 @@ These results show that after a large number of training sessions with the agent
 
 
 ### Qualitative: 
-The difficulty levels of the maps that the agent explored were based on the number of golems and pits that were on the map. We found that the more pits there were that were clustered together the harder it was for the agent to get past that cluster as they would first avoid the tiles with stenches or breezes then would run out of available steps before locating a way around the cluster. 
+The difficulty levels of the maps that the agent explored were based on the number of golems and pits that were on the map. We found that the more pits there were that were clustered together the harder it was for the agent to get past that cluster. 
 
 To verify that the project was successful we created a controlled map that did not change for the agent to train on. Once the agent successfully completed their missions at a high average of at least 90% of the time they moved on to a new map for testing and learning. Our qualitative evaluations showed that our project is successful because after quite a bit of training the agent is able to adapt quicker to new maps by associating the different percepts to certain rewards. 
 
