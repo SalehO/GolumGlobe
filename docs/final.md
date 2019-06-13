@@ -49,7 +49,7 @@ Once the agent locates the gold (is standing on a block of gold) they receive +1
 Throughout their missions an agent will always have a "current" memory that retains all observations and actions of the agent as well as the respective rewards. This "current" memory is a Q-Table of 3x3 grids of the map that the agent has already explored containing the observations the agent has made, the actions they have taken, and the respective rewards that they received from each tile. 
 
 Illustrative view of a Q-Table from "current" memory: 
-| <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid.PNG"> | <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_shifted_once.PNG"> |  <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_shifted_twice.PNG">  | 
+<img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_shifted_once.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_shifted_twice.PNG">
 
 ### Example of how Q-Table Reinforced Learning is used in Golem Globe 
 
