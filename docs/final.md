@@ -98,7 +98,7 @@ The following are results from a single environment for both training and valida
 #### Pre-Training Quantitative Results 
 As you can see here the agent takes about 10 attempts until the agent successfully locates the gold and their success rate is at a low 10%. 
 
-<img src="final_training_arrows.PNG" height="200" width="200"> 
+<img src="final_training_arrows.PNG" height="200" width="300"> 
 
 To view the agent training on this specific map please watch our video at the top of this page. 
 
