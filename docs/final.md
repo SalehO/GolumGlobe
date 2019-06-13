@@ -65,14 +65,7 @@ The following are results from a single environment for both training and valida
 #### Pre-Training Quantitative Results 
 As you can see here the agent takes about 10 attempts until the agent successfully locates the gold and their success rate is at a low 10%. 
 
-| Trial#   | Result  | Reward | Steps |
-|:-------:|:-------:|:------:|:-----:|
-| Trial 1  | Fail | -10017    | 10    |
-| Trial 2  | Fail | -10001    | 15    |
-| Trial 3  | Fail | -9982    | 79    |
-| ... | ... | ...    | ..    |
-| Trial 10  | Success | 9900    | 85    |
-| Average | 10%    | -8534  | 57.9  | 
+<img src="final_training_table.PNG"> 
 
 To view the agent training on this specific map please watch our video at the top of this page. 
 
@@ -83,14 +76,7 @@ Trial 10 was the agent's first successful attempt on this map.
 #### Post-Training Quantitative Results 
 These results show that after a large number of training sessions with the agent they are able to locate the gold a lot quicker (with less number of steps) and with a success rate of 100% 
 
-| Trial#   | Result  | Reward | Steps |
-|:-------:|:-------:|:------:|:-----:|
-| Trial 1  | Success | 10001    | 30    |
-| Trial 2  | Success | 10155    | 15    |
-| Trial 3  | Success | 10352    | 27    |
-| Trial 4  | Success | 10000    | 18    |
-| Trial 5  | Success | 10150    | 19    |
-| Average | 100%    | 10131.6  | 21.8  | 
+<img src="final_validation_table.PNG">
 
 
 ### Qualitative: 
