@@ -67,6 +67,7 @@ Below is an example of how we are storing our Q-Tables on file. All Q-Tables are
 
 This string can be read as the following 3x3 grid: 
 
+| left column | middle column | right column
 | :--- | :---: | :--- |
 | W | U | U | 
 | W | S | C | 
