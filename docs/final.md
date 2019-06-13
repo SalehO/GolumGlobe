@@ -53,7 +53,7 @@ Throughout their missions an agent will always have a "current" memory that reta
 
 Below is an illustrative view of the "current" memory an agent would have stored from traversing the bottom half of the map to the left. 
 
-<img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_shifted_once.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_shifted_twice.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_down.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_down_shifted.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_down_shifted_again.PNG">
+<img src="3x3_grid.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_shifted_once.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_shifted_twice.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_down.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_down_shifted.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_down_shifted_again.PNG">
 
 <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_down_shifted_again.PNG" alt="">
 
