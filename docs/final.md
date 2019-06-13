@@ -49,11 +49,14 @@ Once the agent locates the gold (is standing on a block of gold) they receive +1
 Throughout their missions an agent will always have a "current" memory that retains all observations and actions of the agent as well as the respective rewards. This "current" memory is a Q-Table of 3x3 grids of the map that the agent has already explored containing the observations the agent has made, the actions they have taken, and the respective rewards that they received from each tile. 
 
 Illustrative view of a Q-Table from "current" memory: 
+
 <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_shifted_once.PNG"> <img src="https://github.com/soberanc/GolemGlobe/blob/master/docs/3x3_grid_shifted_twice.PNG">
 
-### Example of how Q-Table Reinforced Learning is used in Golem Globe 
+In addition to a "current" memory, an agent, if they have already had a chance to explore their environment (and failed or succeeded), also retains a "previous" memory that stores the "current" memory from all of their previous explorations. 
 
+This "previous" memory is also a Q-Table of 3x3 grids of the map that the agent has already explored (cummulative - for all attempts) that consolidates all previous attempt's data. 
 
+Although an agent is influenced by their "previous" memories they are mostly influenced by their "current" memory. "Previous" memory is mainly used for discouraging an agent to make fatal decisions (any kind of decision that will cause they to die). This knowledge of fatal mistakes assists the agent in surviving long enough for them to find a new fatal step or for them to find the gold. 
 
 ## Evaluation
 The evaluate the performance of our agent we are using a combinatino of qualitative and quantitative metrics. 
