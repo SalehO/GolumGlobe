@@ -25,16 +25,7 @@ The agent begins with 0 points at the start of every mission.
 
 The agent is rewarded (+) or penalized(-) for the following actions
 
-| _ +/- Points _ |  Action _ |
-| :--- | :--- | 
-| -2 | - Every step an agent takes | 
-| + 3 | - The agent explores a new tile | 
-| -200 | - The agent feels a breeze or smells a stench | 
-| + 250 | - Kill a monster | 
-| -20 | - Swing the sword and miss 
-| -1000| - Killed (fell into a pit, killed by a monster, reached maximum number of allowed steps) | 
-| +1000 | - Gold has been located (agent is standing on the tile of gold and can see the glitter) |
-
+<img src="rewards.PNG">
 
 For every step that an agent takes, be it to an explored tile or to a new tile, they are awarded with -2 points. Every new tile that an agent explores however awards the agent with +3 points. So on an agent's very first attempt on a map every step that leads them to explore a new tile awards them with (+3) + (-2) = +1 point. This encourages an agent to explore the environment. This is especially helpful if the agent has explored most of the tiles on the 10x10 grid and have yet to locate the gold. The agent is encouraged to explore the unexplored areas in hopes of locating the gold. 
 
