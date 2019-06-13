@@ -112,3 +112,6 @@ To verify that the project was successful we created a controlled map that did n
 Our mooonshot case is to create an agent that stops dying and is always able to retrieve the gold for every map. 
 
 ## References 
+Below is a list of resources we found helpful throughout the development of our project
+ - [For monster and item types that can be placed on the map upon start of the mission](https://github.com/microsoft/malmo/blob/master/Schemas/Types.xsd.in)
+ - [Tabular Q Learning](https://github.com/Microsoft/malmo/blob/master/Malmo/samples/Python_examples/tabular_q_learning.py)
