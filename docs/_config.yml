@@ -9,8 +9,6 @@ subtitle: 'CS 175: Project in AI (in Minecraft)'
 # more settings
 
 markdown: kramdown
-baseurl: "/GolemGlobe"
-url: "https://soberanc.github.io"
 
 exclude:
 - README.md
