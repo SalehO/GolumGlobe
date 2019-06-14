@@ -1,0 +1,17 @@
+to run a program:
+
+C:\Users\omarh\Python36_64>python.exe C:\Users\omarh\Malmo-0.36.0-Windows-64bit_withBoost_Python3.6\Python_Examples\tutorial_1.py
+
+to run client:
+ open minecraft then run minecraft. bat
+
+
+to pip install a package use :
+
+
+C:\Users\omarh\Python36_64>python -m pip install --user "package name"
+
+
+
+
+
