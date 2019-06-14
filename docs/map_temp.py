@@ -12,6 +12,30 @@ else:
     print = functools.partial(print, flush=True)
 
 # More interesting generator string: "3;7,44*49,73,35:1,159:4,95:13,35:13,159:11,95:10,159:14,159:6,35:6,95:6;12;"
+Filename = open('C:\\Users\\omarh\Malmo-0.36.0-Windows-64bit_withBoost_Python3.6\\Python_Examples\\okkk.txt') 
+x = 0
+y =0      
+input_xml = "" 
+# test_xml = ""    redstone_block      
+while True:
+    c = Filename.read(1)
+    if not c:
+        break
+    if c != '\n':
+      y = y +1
+    else:
+        y = 0
+        x= x+1
+    if c == 'G':
+      input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"8\" z= " +"\""+ str(y+1)+"\"" +" type=\"redstone_block\" />\n"
+      input_xml+= "<DrawEntity x= "+ "\"" +str(x+0.5)+"\""+ " y=\"9\" z="+ "\""+str(y+1+0.5)+"\""+" type=\"Zombie\" />\n"
+    if c == 'P':
+      input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"8\" z= " +"\""+ str(y+1)+"\"" +" type=\"air\" />\n"
+    if c == 'T':
+      input_xml += "<DrawBlock x= " +"\""+ str(x)+"\""+ " y=\"8\" z= " +"\""+ str(y+1)+"\"" +" type=\"gold_block\" />\n"
+    
+
+# print(input_xml)
 
 missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
             <Mission xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -19,7 +43,6 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
               <About>
                 <Summary>Hello world!</Summary>
               </About>
-
               <ServerSection>
               <ServerInitialConditions>
                   <Time>
@@ -30,8 +53,6 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                 <ServerHandlers>
                   <FlatWorldGenerator generatorString="3;5*1,35:15;1;village(size=10)"/>
                   <DrawingDecorator>
-
-
                       <DrawBlock x="0" y="7" z="1" type="air"/>
                       <DrawBlock x="1" y="7" z="1" type="air"/>
                       <DrawBlock x="2" y="7" z="1" type="air"/>
@@ -42,7 +63,6 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="7" y="7" z="1" type="air"/>
                       <DrawBlock x="8" y="7" z="1" type="air"/>
                       <DrawBlock x="9" y="7" z="1" type="air"/>
-
                       <DrawBlock x="0" y="7" z="2" type="air"/>
                       <DrawBlock x="1" y="7" z="2" type="air"/>
                       <DrawBlock x="2" y="7" z="2" type="air"/>
@@ -53,7 +73,6 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="7" y="7" z="2" type="air"/>
                       <DrawBlock x="8" y="7" z="2" type="air"/>
                       <DrawBlock x="9" y="7" z="2" type="air"/> 
-
                       <DrawBlock x="0" y="7" z="3" type="air"/>
                       <DrawBlock x="1" y="7" z="3" type="air"/>
                       <DrawBlock x="2" y="7" z="3" type="air"/>
@@ -64,7 +83,6 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="7" y="7" z="3" type="air"/>
                       <DrawBlock x="8" y="7" z="3" type="air"/>
                       <DrawBlock x="9" y="7" z="3" type="air"/>
-
                       <DrawBlock x="0" y="7" z="4" type="air"/>
                       <DrawBlock x="1" y="7" z="4" type="air"/>
                       <DrawBlock x="2" y="7" z="4" type="air"/>
@@ -75,7 +93,6 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="7" y="7" z="4" type="air"/>
                       <DrawBlock x="8" y="7" z="4" type="air"/>
                       <DrawBlock x="9" y="7" z="4" type="air"/>
-
                       <DrawBlock x="0" y="7" z="5" type="air"/>
                       <DrawBlock x="1" y="7" z="5" type="air"/>
                       <DrawBlock x="2" y="7" z="5" type="air"/>
@@ -86,8 +103,6 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="7" y="7" z="5" type="air"/>
                       <DrawBlock x="8" y="7" z="5" type="air"/>
                       <DrawBlock x="9" y="7" z="5" type="air"/>
-
-
                       <DrawBlock x="0" y="7" z="6" type="air"/>
                       <DrawBlock x="1" y="7" z="6" type="air"/>
                       <DrawBlock x="2" y="7" z="6" type="air"/>
@@ -99,7 +114,6 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="8" y="7" z="6" type="air"/>
                       <DrawBlock x="9" y="7" z="6" type="air"/>
   
-
                       <DrawBlock x="0" y="7" z="7" type="air"/>
                       <DrawBlock x="1" y="7" z="7" type="air"/>
                       <DrawBlock x="2" y="7" z="7" type="air"/>
@@ -110,7 +124,6 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="7" y="7" z="7" type="air"/>
                       <DrawBlock x="8" y="7" z="7" type="air"/>
                       <DrawBlock x="9" y="7" z="7" type="air"/>
-
                       <DrawBlock x="0" y="7" z="8" type="air"/>
                       <DrawBlock x="1" y="7" z="8" type="air"/>
                       <DrawBlock x="2" y="7" z="8" type="air"/>
@@ -121,7 +134,6 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="7" y="7" z="8" type="air"/>
                       <DrawBlock x="8" y="7" z="8" type="air"/>
                       <DrawBlock x="9" y="7" z="8" type="air"/>
-
                       <DrawBlock x="0" y="7" z="9" type="air"/>
                       <DrawBlock x="1" y="7" z="9" type="air"/>
                       <DrawBlock x="2" y="7" z="9" type="air"/>
@@ -132,7 +144,6 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="7" y="7" z="9" type="air"/>
                       <DrawBlock x="8" y="7" z="9" type="air"/>
                       <DrawBlock x="9" y="7" z="9" type="air"/>
-
                       <DrawBlock x="0" y="7" z="10" type="air"/>
                       <DrawBlock x="1" y="7" z="10" type="air"/>
                       <DrawBlock x="2" y="7" z="10" type="air"/>
@@ -143,7 +154,118 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="7" y="7" z="10" type="air"/>
                       <DrawBlock x="8" y="7" z="10" type="air"/>
                       <DrawBlock x="9" y="7" z="10" type="air"/>
+
+
+
+                      <DrawBlock x="0" y="8" z="1" type="air"/>
+                      <DrawBlock x="1" y="8" z="1" type="air"/>
+                      <DrawBlock x="2" y="8" z="1" type="air"/>
+                      <DrawBlock x="3" y="8" z="1" type="air"/>
+                      <DrawBlock x="4" y="8" z="1" type="air"/>
+                      <DrawBlock x="5" y="8" z="1" type="air"/>
+                      <DrawBlock x="6" y="8" z="1" type="air"/>
+                      <DrawBlock x="7" y="8" z="1" type="air"/>
+                      <DrawBlock x="8" y="8" z="1" type="air"/>
+                      <DrawBlock x="9" y="8" z="1" type="air"/>
+
+                      <DrawBlock x="0" y="8" z="2" type="air"/>
+                      <DrawBlock x="1" y="8" z="2" type="air"/>
+                      <DrawBlock x="2" y="8" z="2" type="air"/>
+                      <DrawBlock x="3" y="8" z="2" type="air"/>
+                      <DrawBlock x="4" y="8" z="2" type="air"/>
+                      <DrawBlock x="5" y="8" z="2" type="air"/>
+                      <DrawBlock x="6" y="8" z="2" type="air"/>
+                      <DrawBlock x="7" y="8" z="2" type="air"/>
+                      <DrawBlock x="8" y="8" z="2" type="air"/>
+                      <DrawBlock x="9" y="8" z="2" type="air"/> 
+
+                      <DrawBlock x="0" y="8" z="3" type="air"/>
+                      <DrawBlock x="1" y="8" z="3" type="air"/>
+                      <DrawBlock x="2" y="8" z="3" type="air"/>
+                      <DrawBlock x="3" y="8" z="3" type="air"/>
+                      <DrawBlock x="4" y="8" z="3" type="air"/>
+                      <DrawBlock x="5" y="8" z="3" type="air"/>
+                      <DrawBlock x="6" y="8" z="3" type="air"/>
+                      <DrawBlock x="7" y="8" z="3" type="air"/>
+                      <DrawBlock x="8" y="8" z="3" type="air"/>
+                      <DrawBlock x="9" y="8" z="3" type="air"/>
+
+                      <DrawBlock x="0" y="8" z="4" type="air"/>
+                      <DrawBlock x="1" y="8" z="4" type="air"/>
+                      <DrawBlock x="2" y="8" z="4" type="air"/>
+                      <DrawBlock x="3" y="8" z="4" type="air"/>
+                      <DrawBlock x="4" y="8" z="4" type="air"/>
+                      <DrawBlock x="5" y="8" z="4" type="air"/>
+                      <DrawBlock x="6" y="8" z="4" type="air"/>
+                      <DrawBlock x="7" y="8" z="4" type="air"/>
+                      <DrawBlock x="8" y="8" z="4" type="air"/>
+                      <DrawBlock x="9" y="8" z="4" type="air"/>
+
+                      <DrawBlock x="0" y="8" z="5" type="air"/>
+                      <DrawBlock x="1" y="8" z="5" type="air"/>
+                      <DrawBlock x="2" y="8" z="5" type="air"/>
+                      <DrawBlock x="3" y="8" z="5" type="air"/>
+                      <DrawBlock x="4" y="8" z="5" type="air"/>
+                      <DrawBlock x="5" y="8" z="5" type="air"/>
+                      <DrawBlock x="6" y="8" z="5" type="air"/>
+                      <DrawBlock x="7" y="8" z="5" type="air"/>
+                      <DrawBlock x="8" y="8" z="5" type="air"/>
+                      <DrawBlock x="9" y="8" z="5" type="air"/>
+
+                      <DrawBlock x="0" y="8" z="6" type="air"/>
+                      <DrawBlock x="1" y="8" z="6" type="air"/>
+                      <DrawBlock x="2" y="8" z="6" type="air"/>
+                      <DrawBlock x="3" y="8" z="6" type="air"/>
+                      <DrawBlock x="4" y="8" z="6" type="air"/>
+                      <DrawBlock x="5" y="8" z="6" type="air"/>
+                      <DrawBlock x="6" y="8" z="6" type="air"/>
+                      <DrawBlock x="7" y="8" z="6" type="air"/>
+                      <DrawBlock x="8" y="8" z="6" type="air"/>
+                      <DrawBlock x="9" y="8" z="6" type="air"/>
+  
+                      <DrawBlock x="0" y="8" z="7" type="air"/>
+                      <DrawBlock x="1" y="8" z="7" type="air"/>
+                      <DrawBlock x="2" y="8" z="7" type="air"/>
+                      <DrawBlock x="3" y="8" z="7" type="air"/>
+                      <DrawBlock x="4" y="8" z="7" type="air"/>
+                      <DrawBlock x="5" y="8" z="7" type="air"/>
+                      <DrawBlock x="6" y="8" z="7" type="air"/>
+                      <DrawBlock x="7" y="8" z="7" type="air"/>
+                      <DrawBlock x="8" y="8" z="7" type="air"/>
+                      <DrawBlock x="9" y="8" z="7" type="air"/>
+
+                      <DrawBlock x="0" y="8" z="8" type="air"/>
+                      <DrawBlock x="1" y="8" z="8" type="air"/>
+                      <DrawBlock x="2" y="8" z="8" type="air"/>
+                      <DrawBlock x="3" y="8" z="8" type="air"/>
+                      <DrawBlock x="4" y="8" z="8" type="air"/>
+                      <DrawBlock x="5" y="8" z="8" type="air"/>
+                      <DrawBlock x="6" y="8" z="8" type="air"/>
+                      <DrawBlock x="7" y="8" z="8" type="air"/>
+                      <DrawBlock x="8" y="8" z="8" type="air"/>
+
+                      <DrawBlock x="9" y="8" z="8" type="air"/>
+                      <DrawBlock x="0" y="8" z="9" type="air"/>
+                      <DrawBlock x="1" y="8" z="9" type="air"/>
+                      <DrawBlock x="2" y="8" z="9" type="air"/>
+                      <DrawBlock x="3" y="8" z="9" type="air"/>
+                      <DrawBlock x="4" y="8" z="9" type="air"/>
+                      <DrawBlock x="5" y="8" z="9" type="air"/>
+                      <DrawBlock x="6" y="8" z="9" type="air"/>
+                      <DrawBlock x="7" y="8" z="9" type="air"/>
+                      <DrawBlock x="8" y="8" z="9" type="air"/>
+                      <DrawBlock x="9" y="8" z="9" type="air"/>
                       
+                      <DrawBlock x="0" y="8" z="10" type="air"/>
+                      <DrawBlock x="1" y="8" z="10" type="air"/>
+                      <DrawBlock x="2" y="8" z="10" type="air"/>
+                      <DrawBlock x="3" y="8" z="10" type="air"/>
+                      <DrawBlock x="4" y="8" z="10" type="air"/>
+                      <DrawBlock x="5" y="8" z="10" type="air"/>
+                      <DrawBlock x="6" y="8" z="10" type="air"/>
+                      <DrawBlock x="7" y="8" z="10" type="air"/>
+                      <DrawBlock x="8" y="8" z="10" type="air"/>
+                      <DrawBlock x="9" y="8" z="10" type="air"/>
 
 
 
@@ -156,24 +278,40 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 
 
 
-                      <DrawBlock x="3" y="7" z="4" type="lapis_block"/>
-                      <DrawBlock x="3" y="8" z="4" type="lapis_block"/>
 
-                      <DrawBlock x="3" y="6" z="4" type="lapis_block"/>
-                      <DrawEntity x="3.5"  y="9" z="4.5" type="Zombie" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       
-                      <DrawBlock x="1" y="6" z="9" type="air"/>
-
-
-
-
-
-
-
-
-
-
-
                       <DrawBlock x="0" y="8" z="1" type="emerald_block"/>
                       <DrawBlock x="1" y="8" z="1" type="lapis_block"/>
                       <DrawBlock x="2" y="8" z="1" type="lapis_block"/>
@@ -210,10 +348,11 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="0" y="8" z="4" type="lapis_block"/>
                       <DrawBlock x="1" y="8" z="4" type="lapis_block"/>
                       <DrawBlock x="2" y="8" z="4" type="lapis_block"/>
+                      <DrawBlock x="3" y="8" z="4" type="lapis_block"/>
                       <DrawBlock x="4" y="8" z="4" type="lapis_block"/>
                       <DrawBlock x="5" y="8" z="4" type="lapis_block"/>
                       <DrawBlock x="6" y="8" z="4" type="lapis_block"/>
-                      <DrawBlock x="7" y="8" z="4" type="air"/>
+                      <DrawBlock x="7" y="8" z="4" type="lapis_block"/>
                       <DrawBlock x="8" y="8" z="4" type="lapis_block"/>
                       <DrawBlock x="9" y="8" z="4" type="lapis_block"/>
 
@@ -228,7 +367,6 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="8" y="8" z="5" type="lapis_block"/>
                       <DrawBlock x="9" y="8" z="5" type="lapis_block"/>
 
-
                       <DrawBlock x="0" y="8" z="6" type="lapis_block"/>
                       <DrawBlock x="1" y="8" z="6" type="lapis_block"/>
                       <DrawBlock x="2" y="8" z="6" type="lapis_block"/>
@@ -240,11 +378,10 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="8" y="8" z="6" type="lapis_block"/>
                       <DrawBlock x="9" y="8" z="6" type="lapis_block"/>
   
-
                       <DrawBlock x="0" y="8" z="7" type="lapis_block"/>
                       <DrawBlock x="1" y="8" z="7" type="lapis_block"/>
                       <DrawBlock x="2" y="8" z="7" type="lapis_block"/>
-                      <DrawBlock x="3" y="8" z="7" type="air"/>
+                      <DrawBlock x="3" y="8" z="7" type="lapis_block"/>
                       <DrawBlock x="4" y="8" z="7" type="lapis_block"/>
                       <DrawBlock x="5" y="8" z="7" type="lapis_block"/>
                       <DrawBlock x="6" y="8" z="7" type="lapis_block"/>
@@ -256,14 +393,13 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="1" y="8" z="8" type="lapis_block"/>
                       <DrawBlock x="2" y="8" z="8" type="lapis_block"/>
                       <DrawBlock x="3" y="8" z="8" type="lapis_block"/>
-                      <DrawBlock x="4" y="8" z="8" type="gold_block"/>
-
+                      <DrawBlock x="4" y="8" z="8" type="lapis_block"/>
                       <DrawBlock x="5" y="8" z="8" type="lapis_block"/>
                       <DrawBlock x="6" y="8" z="8" type="lapis_block"/>
                       <DrawBlock x="7" y="8" z="8" type="lapis_block"/>
                       <DrawBlock x="8" y="8" z="8" type="lapis_block"/>
-                      <DrawBlock x="9" y="8" z="8" type="lapis_block"/>
 
+                      <DrawBlock x="9" y="8" z="8" type="lapis_block"/>
                       <DrawBlock x="0" y="8" z="9" type="lapis_block"/>
                       <DrawBlock x="1" y="8" z="9" type="lapis_block"/>
                       <DrawBlock x="2" y="8" z="9" type="lapis_block"/>
@@ -274,7 +410,7 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="7" y="8" z="9" type="lapis_block"/>
                       <DrawBlock x="8" y="8" z="9" type="lapis_block"/>
                       <DrawBlock x="9" y="8" z="9" type="lapis_block"/>
-
+                      
                       <DrawBlock x="0" y="8" z="10" type="lapis_block"/>
                       <DrawBlock x="1" y="8" z="10" type="lapis_block"/>
                       <DrawBlock x="2" y="8" z="10" type="lapis_block"/>
@@ -285,13 +421,7 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                       <DrawBlock x="7" y="8" z="10" type="lapis_block"/>
                       <DrawBlock x="8" y="8" z="10" type="lapis_block"/>
                       <DrawBlock x="9" y="8" z="10" type="lapis_block"/>
-                      
-
-
-
-
-
-
+                      '''+input_xml+'''
                   </DrawingDecorator>
                 </ServerHandlers>
               </ServerSection>
